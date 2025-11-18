@@ -21,9 +21,45 @@ class PythonFeatureAnalyzerTool(BaseTool):
     description: str = (
         "Analyzes Python feature files in Sonar/domains/{domain}/features/ to extract "
         "feature metadata including identifiers, trace_query methods, output_fields, "
-        "and inheritance from AggFeature. Returns structured JSON."
+        "and inheritance from AggFeature. Also tracks cross-domain imports and validates "
+        "import availability. Returns structured JSON."
     )
     args_schema: Type[BaseModel] = FileAnalysisInput
+    
+    def _extract_imports(self, tree: ast.AST) -> Dict[str, List[str]]:
+        """Extract import statements from AST."""
+        imports = {
+            "common": [],
+            "other_domains": [],
+            "thetaray": [],
+            "external": []
+        }
+        
+        for node in ast.walk(tree):
+            if isinstance(node, ast.ImportFrom):
+                module = node.module or ""
+                items = [alias.name for alias in node.names]
+                
+                if module.startswith("common."):
+                    imports["common"].append({"module": module, "items": items})
+                elif module.startswith("demo_") or module.startswith("default.") or module.startswith("party_"):
+                    imports["other_domains"].append({"module": module, "items": items})
+                elif module.startswith("thetaray."):
+                    imports["thetaray"].append({"module": module, "items": items})
+                else:
+                    imports["external"].append({"module": module, "items": items})
+        
+        return imports
+    
+    def _validate_import(self, import_module: str) -> bool:
+        """Check if an imported module file exists."""
+        # Convert module path to file path
+        # e.g., "common.libs.config.loader" -> "../Sonar/domains/common/libs/config/loader.py"
+        parts = import_module.split(".")
+        if parts[0] in ["common", "default"] or parts[0].startswith("demo_") or parts[0].startswith("party_"):
+            file_path = Path(f"../Sonar/domains/{'/'.join(parts)}.py")
+            return file_path.exists()
+        return True  # Assume external/thetaray imports are valid
     
     def _run(self, domain: str, file_pattern: Optional[str] = None) -> str:
         """Execute the feature analysis."""
@@ -33,6 +69,13 @@ class PythonFeatureAnalyzerTool(BaseTool):
             return json.dumps({"error": f"Features path not found: {features_path}"})
         
         features = []
+        all_imports = {
+            "common": [],
+            "other_domains": [],
+            "thetaray": [],
+            "external": []
+        }
+        missing_imports = []
         
         # Recursively find all .py files
         for py_file in features_path.rglob("*.py"):
@@ -43,6 +86,23 @@ class PythonFeatureAnalyzerTool(BaseTool):
                 with open(py_file, 'r') as f:
                     content = f.read()
                     tree = ast.parse(content)
+                    
+                # Extract imports from this file
+                file_imports = self._extract_imports(tree)
+                
+                # Merge imports
+                for key in all_imports:
+                    for imp in file_imports[key]:
+                        if imp not in all_imports[key]:
+                            all_imports[key].append(imp)
+                            
+                        # Validate common and other_domains imports
+                        if key in ["common", "other_domains"]:
+                            if not self._validate_import(imp["module"]):
+                                missing_imports.append({
+                                    "file": str(py_file.relative_to(features_path.parent)),
+                                    "import": imp["module"]
+                                })
                     
                 for node in ast.walk(tree):
                     if isinstance(node, ast.ClassDef):
@@ -80,7 +140,20 @@ class PythonFeatureAnalyzerTool(BaseTool):
             except Exception as e:
                 continue
         
-        return json.dumps({"domain": domain, "features": features, "total": len(features)}, indent=2)
+        result = {
+            "domain": domain,
+            "features": features,
+            "total": len(features),
+            "imports": {
+                "common_modules": len(all_imports["common"]),
+                "other_domains": len(all_imports["other_domains"]),
+                "thetaray_apis": len(all_imports["thetaray"]),
+                "details": all_imports
+            },
+            "missing_imports": missing_imports
+        }
+        
+        return json.dumps(result, indent=2)
 
 
 class YAMLConfigAnalyzerTool(BaseTool):

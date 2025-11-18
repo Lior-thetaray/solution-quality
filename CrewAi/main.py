@@ -49,7 +49,8 @@ def setup_environment():
         model=f"azure/{deployment}",
         api_key=api_key,
         base_url=endpoint,
-        api_version=api_version
+        api_version=api_version,
+        temperature=0
     )
 
 
