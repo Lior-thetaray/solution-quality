@@ -8,10 +8,15 @@ from .code_analysis_tools import (
     NotebookAnalyzerTool
 )
 
+from .playwright_tools import (
+    PlaywrightPerformanceTool
+)
+
 __all__ = [
     "PythonFeatureAnalyzerTool",
     "YAMLConfigAnalyzerTool",
     "DatasetAnalyzerTool",
     "DAGAnalyzerTool",
-    "NotebookAnalyzerTool"
+    "NotebookAnalyzerTool",
+    "PlaywrightPerformanceTool"
 ]
