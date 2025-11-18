@@ -140,3 +140,116 @@ QA agent must:
 
 - Trust and follow this file first.
 - Offer localized, reversible changes; avoid broad refactors unless clearly needed.
+
+---
+
+## 6) Validation Tasks & Workflow
+
+Execute the following tasks sequentially for domain validation:
+
+### Task 1: Analyze Code Structure
+Analyze the Sonar codebase structure in the domain to extract:
+- All features in `domains/{domain}/features/`
+- All datasets in `domains/{domain}/datasets/`
+- Evaluation flows in `domains/{domain}/evaluation_flows/`
+- DAG definitions in `dags/{domain}/`
+- Risk definitions in `domains/{domain}/risks/`
+- Notebooks in `domains/{domain}/notebooks/`
+
+**Expected Output:** JSON with lists of features (identifiers, trace_query methods, output fields), datasets (ingestion modes, fields), evaluation flows, DAG tasks, risks, and notebooks.
+
+### Task 2: Analyze YAML Configurations
+Parse YAML configuration files for the domain:
+- Global configuration in `domains/{domain}/config/core/global.yaml`
+- Feature wrangling configs in `domains/{domain}/config/core/*/wrangling.yaml`
+- Extract active features and their train flags
+
+**Expected Output:** JSON with global parameters, list of active features with train=true/false flags, feature-specific parameters.
+
+### Task 3: Validate Trace Queries
+Check trace query coverage:
+- Identify all features with `train=true` from YAML configs
+- Verify each trained feature has either:
+  - A `trace_query()` method returning non-empty SQL, OR
+  - Inclusion in `global_trace_query` in evaluation flow
+- Verify TraceQuery objects have required fields (identifier, features, dataset, sql)
+
+**Expected Output:** JSON validation report with pass/fail, list of trained features, features with trace queries, features in global trace, missing trace queries, specific issues.
+
+### Task 4: Validate Unit Tests
+Check unit test coverage:
+- List all features in `domains/{domain}/features/`
+- Check for corresponding tests in `domains/{domain}/tests/`
+- Report missing test files
+
+**Expected Output:** JSON with pass/fail, total features count, features with tests, missing tests, test coverage percentage.
+
+### Task 5: Validate DAG Structure
+Validate E2E DAG structure:
+- Find DAG files in `dags/{domain}/` or `dags/default/`
+- Extract task definitions and dependencies
+- Verify E2E pipeline: data_upload → wrangling → training → evaluation → decisioning → distribution
+- Check for algo_validation and drift monitoring tasks
+
+**Expected Output:** JSON with pass/fail, DAG file paths, task flow (ordered task IDs), has_e2e_pipeline flag, missing tasks, issues.
+
+### Task 6: Validate Datasets
+Validate dataset definitions:
+- Parse all dataset files in `domains/{domain}/datasets/`
+- Check ingestion modes (APPEND for transactional, UPDATE/OVERWRITE for auxiliary)
+- Verify mandatory fields are present
+- Check for `upload_by_execution_date` usage
+
+**Expected Output:** JSON with pass/fail, datasets list (identifier, ingestion_mode, field_count), transactional/auxiliary dataset validation, issues.
+
+### Task 7: Validate Evaluation Flows
+Validate evaluation flow completeness:
+- Parse evaluation flow files in `domains/{domain}/evaluation_flows/`
+- Check required components: EvaluationFlow metadata, AlgoEvaluationStep, global_trace_query, trace_queries list, customer_insights
+- Validate TraceQuery field requirements
+
+**Expected Output:** JSON with pass/fail, evaluation flows list, has_global_trace_query, trace_query_count, has_customer_insights, issues.
+
+### Task 8: Validate Risks
+Validate risk definitions:
+- Find risk YAML files in `domains/{domain}/risks/`
+- Check required fields: conditions, parameters, variables
+- Validate metadata references to dataset fields
+- Check dynamic template syntax
+
+**Expected Output:** JSON with pass/fail, risk file paths, risks validated count, issues.
+
+### Task 9: Validate Drift Monitoring
+Validate drift monitoring implementation:
+- Find drift-related notebooks in `domains/{domain}/notebooks/`
+- Check for `drift_lib.py` in `domains/{domain}/libs/`
+- Verify statistical test usage (PSI, Z-score)
+- Check for training/test period definitions
+
+**Expected Output:** JSON with pass/fail, has_drift_notebook, has_drift_lib, statistical_tests_found, issues.
+
+### Task 10: Generate Final SDLC Report
+Synthesize all validation results into comprehensive report:
+- Compile all validation checks (trace queries, tests, DAGs, datasets, etc.)
+- For each check, include pass/fail status and specific issues
+- Calculate overall quality score (0-100) based on validation results
+- Provide actionable recommendations
+
+**Expected Output:** Complete JSON report with:
+```json
+{
+  "domain": "domain_name",
+  "timestamp": "ISO datetime",
+  "validations": [
+    {"name": "Trace Query Coverage", "pass": true/false, "issues": [...]},
+    ...
+  ],
+  "summary": {
+    "total_checks": number,
+    "passed": number,
+    "failed": number
+  },
+  "quality_score": 0-100,
+  "recommendations": ["actionable improvements..."]
+}
+```
