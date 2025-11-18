@@ -68,7 +68,7 @@ Conventions:
 To ensure the agent fully validates a complete ThetaRay solution, the following components must also be present and valid. These reflect structural and functional requirements described in the Platform User Guide.
 
 ### A) EvaluationFlow Requirements 
-Every solution’s EvaluationFlow must include:
+Every solution's EvaluationFlow must include:
 - **EvaluationFlow metadata object** describing model, datasets, and trace queries.
 - **TraceQueries** for each trained feature, with required fields:
   - `identifier`
@@ -76,10 +76,12 @@ Every solution’s EvaluationFlow must include:
   - `dataset`
   - `sql`
   - `parquet_index` (when applicable)
+  - **`year_month` field** in the trace query dataset, formatted as `YYYY_MM` (e.g., "2024_03")
 
 The QA agent must:
 - Validate structure, syntax, and presence of each required field.
 - Ensure each feature in the evaluation notebook is mapped to a corresponding trace query.
+- **Verify that the trace query dataset includes a `year_month` field in `YYYY_MM` format** (validate by checking dataset schema or SQL query SELECT clause).
 
 ### B) Airflow DAG Structure Requirements
 A full solution must include operational DAGs with:
