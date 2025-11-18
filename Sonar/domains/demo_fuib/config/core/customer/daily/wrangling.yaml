@@ -1,0 +1,12 @@
+requested_features:
+    cnt_trx:
+        v1:
+          active: true
+          train: false
+    sum_trx_chrty_npo:
+        v1:
+          active: true
+          train: true
+          params:
+            sum_trx_threshold: 1000
+year_month_execution: false

@@ -1,0 +1,32 @@
+identifier: cust_monthly_anomaly
+display_name: Customer AI Anomaly
+description: Customer AI Anomaly
+category: dynamic_risk
+severity: 90
+analysis_method: 'AI'
+read_only: True
+dynamic_display_name: "{{ algo[0].display_name }} | {{ algo[1].display_name }}"
+dynamic_description: "1- {{ algo[0].description }}.  2- {{ algo[1].description }}.  3- {{ algo[2].description }}"
+dynamic_category: "{{ algo[0].category }}"
+dynamic_severity: "{{ activity.algo_score * 100 }}"
+dynamic_suppression_identifier: "{{ activity.algo_pattern }}"
+suppression_period_unit: DAY
+suppression_period_size: -1
+evaluation_flows:
+  - cust_month_ef
+parameters:
+  - name: fusion_threshold
+    datatype: DOUBLE
+    value: "0.5"
+variables:
+  - name: is_customer_monthly_anomaly
+    display_name: Is Customer Monthly Anomaly
+    description: Customer Monthly Anomaly
+    expression: "activity.algo_score >= {parameters.fusion_threshold} AND activity.year_month > '2025-05-30'"
+    datatype: BOOLEAN
+conditions:
+  - variable: is_customer_monthly_anomaly
+    value: "true"
+    display_settings:
+      - type: "Rating"
+        evaluation_step: "algo"

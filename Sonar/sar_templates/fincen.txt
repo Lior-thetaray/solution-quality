@@ -1,0 +1,73 @@
+{
+  "Activity": [
+    {
+      "EFilingPriorDocumentNumber": null,
+      "FilingInstitutionNotetoFinCEN": "Test SAR Note",
+      "ActivityAssociation": {
+        "ContinuingActivityReportIndicator": null,
+        "CorrectsAmendsPriorReportIndicator": null,
+        "InitialReportIndicator": "Y",
+        "JointReportIndicator": "EMPTY",
+        "SeqNum": 1
+      },
+      "Party": [
+       {% set schema_result = fetch_records("SELECT schema_name FROM information_schema.schemata WHERE schema_name LIKE 'solution%' LIMIT 1") %}
+        {% set schema = schema_result[0]['schema_name'] %}
+
+
+        {% for account in fetch_records("SELECT * FROM " ~ schema ~ ".account WHERE account_id='" + account_id + "'") %}
+        {
+          "ActivityPartyTypeCode": "34",
+          "AdmissionConfessionNoIndicator": "EMPTY",
+          "BirthDateUnknownIndicator": "{{ 'Y' if not account['date'] else 'EMPTY' }}",
+          "BothPurchaserSenderPayeeReceiveIndicator": "EMPTY",
+          "ContactDateText": null,
+          "FemaleGenderIndicator": "EMPTY",
+          "IndividualBirthDateText": "{{ account['date'].strftime('%Y%m%d') if account['date'] else '' }}",
+          "LossToFinancialAmountText": 5000,
+          "MaleGenderIndicator": "EMPTY",
+          "NoBranchActivityInvolvedIndicator": "{{ 'Y' if not account['district_id'] else 'EMPTY' }}",
+          "NoKnownAccountInvolvedIndicator": "EMPTY",
+          "NonUSFinancialInstitutionIndicator": "EMPTY",
+          "PartyAsEntityOrganizationIndicator": "EMPTY",
+          "PayeeReceiverIndicator": "EMPTY",
+          "PayLocationIndicator": "{{ 'Y' if account['district_id'] else 'EMPTY' }}",
+          "PrimaryRegulatorTypeCode": "1",
+          "PartyName": [
+            {
+              "EntityLastNameUnknownIndicator": "EMPTY",
+              "FirstNameUnknownIndicator": "EMPTY",
+              "PartyNameTypeCode": "L",
+              "RawPartyFullName": "{{ account['name'] }}",
+              "SeqNum": 1
+            }
+          ],
+          "Address": [
+            {
+                "CountryCodeUnknownIndicator": "EMPTY",
+                "RawCountryCodeText": "{{ account['country'] }}",
+                "StreetAddressUnknownIndicator": "EMPTY",
+                "RawStreetAddress1Text": "{{ account['address'] }}",
+                "SeqNum": "1"
+            }
+          ],
+          "SeqNum": {{ loop.index }}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ],
+      "SuspiciousActivity": {
+        "AmountUnknownIndicator": "Y",
+        "SuspiciousActivityFromDateText": "20230101",
+        "TotalSuspiciousAmountText": 5000,
+        "SeqNum": 1
+      },
+      "SeqNum": 1
+    }
+  ],
+  {% set loans = fetch_records("SELECT amount FROM " ~ schema ~ ".loan WHERE account_id='" + account_id + "'") %}
+  "TotalAmount": {{ loans | sum(attribute='amount') }},
+  "PartyCount": 1,
+  "ActivityCount": {{ loans | length }},
+  "ActivityAttachmentCount": 1,
+  "AttachmentCount": 1
+}

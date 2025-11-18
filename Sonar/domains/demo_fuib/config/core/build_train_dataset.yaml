@@ -1,0 +1,5 @@
+# Start date for the data from which to sample
+start_date: ''
+# End date for the data from which to sample
+end_date: ''
+sample_percentage: 100

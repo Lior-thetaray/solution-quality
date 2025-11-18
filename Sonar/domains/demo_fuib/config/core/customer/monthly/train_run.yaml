@@ -1,0 +1,18 @@
+# end_training_date: 2023-12-01
+
+tr_detector:
+    algo_type:
+        - Ny
+        - RL
+        - DK
+        - NK
+        - Pg
+        - HB
+        - GC
+        - GL
+
+numeric_features_transformer:
+    strategy: mean
+
+model_tags:
+    version: release

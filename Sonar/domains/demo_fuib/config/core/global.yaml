@@ -1,0 +1,11 @@
+# should run in BAU (Business as Usual) mode or not
+bau: False
+
+# how many months to look back when wrangling monthly features
+monthly_features_look_back_in_months: 6
+monthly_data_horizon:  # This should be the maximum number of months to look back over all features calculations (In this specific case it might be identical to monthly_features_look_back_in_months parameter.
+# Threshold to be used for me to me calculation
+me_to_me_threshold: 1 
+
+global_features_params:
+    round_digits: 2

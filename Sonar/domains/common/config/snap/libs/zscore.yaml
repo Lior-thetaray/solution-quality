@@ -1,0 +1,5 @@
+round_digits: 2
+truncate_min_max:
+- 0
+- 5
+z_score_method: mean

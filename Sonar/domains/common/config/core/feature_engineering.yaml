@@ -1,0 +1,2 @@
+# rules will skip over transactions with amount smaller than the threshold, threshold must be DOUBLE type (same as trx_amount type)
+min_trx_amount_thr: 5.0

@@ -1,0 +1,23 @@
+# This configuration is only effective when user runs notebooks manually and not using Airflow
+
+domain: 'domestic'
+stage: 'data_exploration'
+entity: 'customer'
+cadence: 'monthly'
+spark_conf:
+  spark.authenticate: false
+  spark.dynamicAllocation.enabled: "true"
+  spark.dynamicAllocation.initialExecutors: "1"
+  spark.dynamicAllocation.maxExecutors: "10"
+  spark.dynamicAllocation.minExecutors: "0"
+  spark.dynamicAllocation.shuffleTracking.enabled: "true"
+  spark.executor.cores: "2"
+  spark.executor.instances: "1"
+  spark.executor.memory: "5g"
+  spark.network.crypto.enabled: false
+  spark.sql.adaptive.enabled: "true"
+  hive.metastore.integral.jdo.pushdown: "true"
+
+  # Since we call multiple times withColumn from each feature, we need to increase the stack size to avoid StackOverflowError
+  # This is a WA, since spark 3.3.0 there is a new API withColumns() that should be used. should be available in 6.6.
+  spark.driver.extraJavaOptions: '-Xss8M'

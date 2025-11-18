@@ -1,0 +1,101 @@
+requested_features:
+    z_score_sum_trx:
+        v1:
+          active: true
+          train: true
+    z_score_cnt_trx:
+        v1:
+          active: true
+          train: true
+    z_score_sum_hghrsk_cntry:
+        v1:
+          active: true
+          train: true
+    cnt_trx_n_day:
+        v1:
+          active: true
+          train: true
+    sum_new_account:
+        v1:
+          active: true
+          train: true
+    max_trx:
+        v1:
+          active: true
+          train: true
+    sum_trx_cash:
+        v1:
+          active: true
+          train: true
+    sum_trx_cash_in:
+        v1:
+          active: true
+          train: true
+    sum_trx_cash_out:
+        v1:
+          active: true
+          train: true
+    cnt_trx_cash:
+        v1:
+          active: true
+          train: true
+    one_to_many:
+        v1:
+          active: true
+          train: false
+    many_to_one:
+        v1:
+          active: true
+          train: false
+    sum_pipe_customer:
+        v1:
+          active: true
+          train: false
+    # sum_rapid_movement:
+    #     v1:
+    #       active: true
+    #       train: false
+    sum_trx_fop:
+        v1:
+          active: true
+          train: false
+    sum_trx_name_mis:
+        v1:
+          active: true
+          train: false
+    cnt_trx_name_mis:
+        v1:
+          active: true
+          train: false
+    customer_name:
+        v1:
+          active: true
+          train: false
+    # sum_ratio_crypto:
+    #     v1:
+    #       active: false
+    #       train: false
+    #       params:
+    #         sum_trx_threshold: '' #TODO 
+    #         round_digits: 2
+    # high_risk_countries:
+    #     v1:
+    #       active: false
+    #       train: false
+    # z_score_sum_trx:
+    #     v1:
+    #       active: false
+    #       train: false
+    # sum_trx:
+    #     v1:
+    #       active: false
+    #       train: false
+    # me_to_me_high_ratio:
+    #     v1:
+    #       active: false
+    #       train: false
+    #       params:
+    #         cnt_trx_threshold: '' #TODO 
+    #         round_digits: 2
+
+year_month_execution: false

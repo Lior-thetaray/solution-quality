@@ -1,0 +1,57 @@
+identifier: anomaly2_party
+display_name: anomaly2_party
+description: anomaly2_party
+category: default
+severity: 27
+suppression_period_unit: DAY
+suppression_period_size: -1
+evaluation_flows:
+  - party_tr_analysis
+parameters:
+  - name: payments
+    datatype: LONG
+    value: "9100"
+enrichments:
+  - name: amount
+    sql: "select min(amount) as min_amount, max(amount) as max_amount from tr_analysis where tr_analysis.tr_id = activity.tr_id"
+    outputs:
+      - name: min_amount
+        datatype: DOUBLE
+      - name: max_amount
+        datatype: DOUBLE
+    trace_query:
+      identifier: amount_tq
+      identifier_column: trans_id
+      dataset: transaction
+      is_grouping_query: True
+      sql: "select ds.* from {dataset_table} ds JOIN {primary_identifiers} AS pr_ids ON ds.account_id = pr_ids.account_id"
+  - name: payments
+    sql: "select max(payments) as max_payments from tr_analysis where tr_analysis.tr_id = activity.tr_id"
+    outputs:
+      - name: max_payments
+        datatype: LONG
+variables:
+  - name: is_anomaly_amount
+    display_name: is_anomaly_amount dispaly name
+    description: is_anomaly_amount
+    expression: "activity.amount between {enrichments.min_amount} and {enrichments.max_amount}"
+    datatype: BOOLEAN
+  - name: is_anomaly2_payments
+    display_name: is_anomaly2_payments dispaly name
+    description: is_anomaly_payments
+    expression: "{enrichments.max_payments} > {parameters.payments}"
+    datatype: BOOLEAN
+conditions:
+  - variable: is_anomaly_amount
+    value: "true"
+    display_settings:
+      - type: "Threshold"
+        feature: "{activity.amount}"
+        parameter: "{parameters.payments}"
+    title: "amount title"
+    description: "activity.amount between {enrichments.min_amount} and {enrichments.max_amount}"
+  - variable: is_anomaly2_payments
+    value: "true"
+    display_settings:
+      - type: "Rating"
+        evaluation_step: "tr_evaluation"

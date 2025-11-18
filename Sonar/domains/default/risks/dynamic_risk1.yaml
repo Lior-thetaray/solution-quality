@@ -1,0 +1,39 @@
+identifier: dynamic_risk
+display_name: dynamic_risk display_name
+description: dynamic_risk description
+category: dynamic_risk
+severity: 90
+read_only: True
+dynamic_display_name: "{{ tr_evaluation[0].display_name }} -> {{ activity.tr_evaluation_pattern }}"
+dynamic_description: "{{ tr_evaluation[0].description }},{{ parameters.fusion_threshold1 }}"
+dynamic_category: "{{ tr_evaluation[2].category }}"
+dynamic_severity: "{{ activity.tr_evaluation_score * 100 }}"
+dynamic_suppression_identifier: "{{ activity.tr_evaluation_pattern }}"
+suppression_period_unit: DAY
+suppression_period_size: -1
+evaluation_flows:
+  - tr_analysis
+  - party_tr_analysis
+parameters:
+  - name: fusion_threshold1
+    datatype: DOUBLE
+    value: "0.48"
+variables:
+  - name: is_anomaly11
+    display_name: is_anomaly1 dispaly name
+    description: is_anomaly
+    expression: "activity.tr_evaluation_score > {parameters.fusion_threshold1}"
+    datatype: BOOLEAN
+  - name: is_anomaly12
+    display_name: is_anomaly12 dispaly name
+    description: is_anomaly12
+    expression: "activity.tr_evaluation_score > {parameters.fusion_threshold1}"
+    datatype: BOOLEAN
+conditions:
+  - variable: is_anomaly12
+    value: "true"
+    display_settings:
+      - type: "Rating"
+        evaluation_step: "tr_evaluation"
+    title: "score title"
+    description: "activity.tr_evaluation_score > {parameters.fusion_threshold1}"
