@@ -1,0 +1,6120 @@
+{
+  "test_metadata": {
+    "test_name": "alert_system_performance_test",
+    "test_start": "2025-11-19T12:48:22.784343",
+    "test_end": "2025-11-19T12:54:13.594550",
+    "total_duration_sec": 350.81,
+    "network_config": {
+      "download_mbps": 976.56,
+      "upload_mbps": 683.59,
+      "latency_ms": 40
+    }
+  },
+  "measurements_by_alert": {
+    "setup": [
+      {
+        "step": 1,
+        "global_step": 1,
+        "page": "alert_list",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:48:38.578700",
+        "load_time_s": 1.858,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 28.38,
+          "system_memory_percent": 0.12
+        },
+        "resource_timing": {
+          "resource_count": 9,
+          "total_transfer_size_mb": 0.01,
+          "avg_response_time_s": 0.176,
+          "slowest_resource_time_s": 0.331,
+          "fastest_resource_time_s": 0.142
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.25476689627635,
+          "interaction_response_time_s": null
+        }
+      }
+    ],
+    "alert_0": [
+      {
+        "step": 1,
+        "global_step": 2,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:48:41.326568",
+        "load_time_s": 0.712,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 28.42,
+          "system_memory_percent": 0.12
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.27,
+          "avg_response_time_s": 0.254,
+          "slowest_resource_time_s": 0.675,
+          "fastest_resource_time_s": 0.152
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 142.34910994345987,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 0
+      },
+      {
+        "step": 2,
+        "global_step": 3,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:48:45.396605",
+        "load_time_s": 2.027,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 28.56,
+          "system_memory_percent": 0.12
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.236,
+          "slowest_resource_time_s": 0.493,
+          "fastest_resource_time_s": 0.141
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 143.29222627190578,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 0,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 4,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:48:50.071090",
+        "load_time_s": 2.117,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 28.59,
+          "system_memory_percent": 0.12
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.243,
+          "slowest_resource_time_s": 0.384,
+          "fastest_resource_time_s": 0.146
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.2475667581732,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 0,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 5,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:48:54.635352",
+        "load_time_s": 2.038,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 28.61,
+          "system_memory_percent": 0.12
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.227,
+          "slowest_resource_time_s": 0.442,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.06061512387228,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 0,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 6,
+        "page": "feature",
+        "action": "feature_3_load",
+        "timestamp": "2025-11-19T12:48:59.912964",
+        "load_time_s": 2.765,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 28.62,
+          "system_memory_percent": 0.12
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 1.63,
+          "avg_response_time_s": 0.552,
+          "slowest_resource_time_s": 1.917,
+          "fastest_resource_time_s": 0.153
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 120.58759044069284,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 0,
+        "feature_index": 3
+      },
+      {
+        "step": 6,
+        "global_step": 7,
+        "page": "feature",
+        "action": "feature_4_load",
+        "timestamp": "2025-11-19T12:49:04.475740",
+        "load_time_s": 2.03,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 28.62,
+          "system_memory_percent": 0.12
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.23,
+          "slowest_resource_time_s": 0.403,
+          "fastest_resource_time_s": 0.146
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.68314391482673,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 0,
+        "feature_index": 4
+      },
+      {
+        "step": 7,
+        "global_step": 8,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:49:08.529632",
+        "load_time_s": 1.482,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-1"
+                }
+              ],
+              "render_detection_time_ms": 0,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 21,
+              "total_data_transferred_bytes": 31065,
+              "api_calls_count": 13,
+              "avg_processing_time_ms": 12.904761904761905,
+              "total_dom_elements": 873,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.06071019473081329
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.44,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 13,
+          "total_transfer_size_mb": 0.03,
+          "avg_response_time_s": 0.163,
+          "slowest_resource_time_s": 0.32,
+          "fastest_resource_time_s": 0.122
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 142.70460147494688,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 0
+      },
+      {
+        "step": 8,
+        "global_step": 9,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:49:13.115240",
+        "load_time_s": 4.583,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.583,
+          "dom_nodes_added_s": -0.001,
+          "network_requests_added_s": 0.003,
+          "browser_processing_time_ms_s": 4.583
+        },
+        "alert_index": 0,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 9,
+        "global_step": 10,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:49:14.654591",
+        "load_time_s": 1.535,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.535,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.003,
+          "browser_processing_time_ms_s": 1.537
+        },
+        "alert_index": 0,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_1": [
+      {
+        "step": 1,
+        "global_step": 11,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:49:18.841487",
+        "load_time_s": 0.727,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.44,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.208,
+          "slowest_resource_time_s": 0.274,
+          "fastest_resource_time_s": 0.133
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 143.9582521068889,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 1
+      },
+      {
+        "step": 2,
+        "global_step": 12,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:49:22.984427",
+        "load_time_s": 2.108,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.45,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.06,
+          "avg_response_time_s": 0.258,
+          "slowest_resource_time_s": 0.518,
+          "fastest_resource_time_s": 0.14
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.31383515265296,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 1,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 13,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:49:27.650520",
+        "load_time_s": 2.13,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.47,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.06,
+          "avg_response_time_s": 0.257,
+          "slowest_resource_time_s": 0.499,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.1856752280029,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 1,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 14,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:49:32.222034",
+        "load_time_s": 2.043,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.52,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.06,
+          "avg_response_time_s": 0.24,
+          "slowest_resource_time_s": 0.429,
+          "fastest_resource_time_s": 0.146
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.44366696988183,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 1,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 15,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:49:36.309162",
+        "load_time_s": 1.556,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-2"
+                }
+              ],
+              "render_detection_time_ms": 0,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 12,
+              "total_data_transferred_bytes": 26823,
+              "api_calls_count": 12,
+              "avg_processing_time_ms": 0,
+              "total_dom_elements": 874,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.06064073226544622
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.52,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 12,
+          "total_transfer_size_mb": 0.03,
+          "avg_response_time_s": 0.159,
+          "slowest_resource_time_s": 0.245,
+          "fastest_resource_time_s": 0.123
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.42056868722162,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 1
+      },
+      {
+        "step": 6,
+        "global_step": 16,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:49:40.957745",
+        "load_time_s": 4.645,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.645,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.004,
+          "browser_processing_time_ms_s": 4.646
+        },
+        "alert_index": 1,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 7,
+        "global_step": 17,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:49:42.844980",
+        "load_time_s": 1.881,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.881,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.004,
+          "browser_processing_time_ms_s": 1.883
+        },
+        "alert_index": 1,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_2": [
+      {
+        "step": 1,
+        "global_step": 18,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:49:47.055498",
+        "load_time_s": 0.727,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.53,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.173,
+          "slowest_resource_time_s": 0.298,
+          "fastest_resource_time_s": 0.122
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.26052752430914,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 2
+      },
+      {
+        "step": 2,
+        "global_step": 19,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:49:51.232417",
+        "load_time_s": 2.132,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.56,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.228,
+          "slowest_resource_time_s": 0.353,
+          "fastest_resource_time_s": 0.142
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.50002989655803,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 2,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 20,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:49:55.913031",
+        "load_time_s": 2.182,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.64,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.234,
+          "slowest_resource_time_s": 0.415,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.3888206081322,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 2,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 21,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:50:01.296382",
+        "load_time_s": 2.893,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.64,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 1.63,
+          "avg_response_time_s": 0.533,
+          "slowest_resource_time_s": 1.625,
+          "fastest_resource_time_s": 0.158
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 116.85860109267797,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 2,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 22,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:50:06.409636",
+        "load_time_s": 2.568,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-3"
+                }
+              ],
+              "render_detection_time_ms": 1,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 11,
+              "total_data_transferred_bytes": 33310,
+              "api_calls_count": 11,
+              "avg_processing_time_ms": 30.545454545454547,
+              "total_dom_elements": 878,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.06036446469248292
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.62,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 11,
+          "total_transfer_size_mb": 0.03,
+          "avg_response_time_s": 0.224,
+          "slowest_resource_time_s": 0.646,
+          "fastest_resource_time_s": 0.126
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.24036733878975,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 2
+      },
+      {
+        "step": 6,
+        "global_step": 23,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:50:11.097308",
+        "load_time_s": 4.68,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.68,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.007,
+          "browser_processing_time_ms_s": 4.686
+        },
+        "alert_index": 2,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 7,
+        "global_step": 24,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:50:13.065310",
+        "load_time_s": 1.863,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.863,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 1.867
+        },
+        "alert_index": 2,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_3": [
+      {
+        "step": 1,
+        "global_step": 25,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:50:17.280699",
+        "load_time_s": 0.727,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.62,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.167,
+          "slowest_resource_time_s": 0.251,
+          "fastest_resource_time_s": 0.124
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.51731217732822,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 3
+      },
+      {
+        "step": 2,
+        "global_step": 26,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:50:21.327632",
+        "load_time_s": 2.015,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.67,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.229,
+          "slowest_resource_time_s": 0.443,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.182797844742,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 3,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 27,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:50:26.015135",
+        "load_time_s": 2.148,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.67,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.257,
+          "slowest_resource_time_s": 0.468,
+          "fastest_resource_time_s": 0.141
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.2317289840895,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 3,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 28,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:50:30.667107",
+        "load_time_s": 2.133,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.67,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.234,
+          "slowest_resource_time_s": 0.378,
+          "fastest_resource_time_s": 0.137
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.37583678036881,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 3,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 29,
+        "page": "feature",
+        "action": "feature_3_load",
+        "timestamp": "2025-11-19T12:50:35.343511",
+        "load_time_s": 2.172,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.69,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.241,
+          "slowest_resource_time_s": 0.403,
+          "fastest_resource_time_s": 0.144
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.25764715278328,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 3,
+        "feature_index": 3
+      },
+      {
+        "step": 6,
+        "global_step": 30,
+        "page": "feature",
+        "action": "feature_4_load",
+        "timestamp": "2025-11-19T12:50:39.875990",
+        "load_time_s": 2.003,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 22.69,
+          "system_memory_percent": 0.09
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.21,
+          "slowest_resource_time_s": 0.294,
+          "fastest_resource_time_s": 0.148
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.1238367859885,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 3,
+        "feature_index": 4
+      },
+      {
+        "step": 7,
+        "global_step": 31,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:50:43.962358",
+        "load_time_s": 1.569,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-4"
+                }
+              ],
+              "render_detection_time_ms": 0,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 20,
+              "total_data_transferred_bytes": 23761,
+              "api_calls_count": 14,
+              "avg_processing_time_ms": 0.1,
+              "total_dom_elements": 884,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.05995475113122172
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.38,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 14,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.146,
+          "slowest_resource_time_s": 0.242,
+          "fastest_resource_time_s": 0.121
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.38737784528084,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 3
+      },
+      {
+        "step": 8,
+        "global_step": 32,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:50:48.665373",
+        "load_time_s": 4.7,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.7,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 4.702
+        },
+        "alert_index": 3,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 9,
+        "global_step": 33,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:50:50.082876",
+        "load_time_s": 1.411,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.411,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 1.413
+        },
+        "alert_index": 3,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_4": [
+      {
+        "step": 1,
+        "global_step": 34,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:50:54.470750",
+        "load_time_s": 0.872,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.38,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.23,
+          "slowest_resource_time_s": 0.283,
+          "fastest_resource_time_s": 0.154
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 140.53903197512176,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 4
+      },
+      {
+        "step": 2,
+        "global_step": 35,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:50:58.626614",
+        "load_time_s": 2.122,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.38,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.06,
+          "avg_response_time_s": 0.251,
+          "slowest_resource_time_s": 0.509,
+          "fastest_resource_time_s": 0.138
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.18135919617552,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 4,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 36,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:51:03.182642",
+        "load_time_s": 2.013,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.38,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.06,
+          "avg_response_time_s": 0.233,
+          "slowest_resource_time_s": 0.477,
+          "fastest_resource_time_s": 0.142
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.85369776525783,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 4,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 37,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:51:07.208729",
+        "load_time_s": 1.466,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-5"
+                }
+              ],
+              "render_detection_time_ms": 0,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 8,
+              "total_data_transferred_bytes": 25476,
+              "api_calls_count": 8,
+              "avg_processing_time_ms": 0.25,
+              "total_dom_elements": 887,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.05975197294250282
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 8,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.179,
+          "slowest_resource_time_s": 0.377,
+          "fastest_resource_time_s": 0.123
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.00031889343958,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 4
+      },
+      {
+        "step": 5,
+        "global_step": 38,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:51:11.887690",
+        "load_time_s": 4.676,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.676,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.008,
+          "browser_processing_time_ms_s": 4.676
+        },
+        "alert_index": 4,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 6,
+        "global_step": 39,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:51:13.837224",
+        "load_time_s": 1.932,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.932,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 1.937
+        },
+        "alert_index": 4,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_5": [
+      {
+        "step": 1,
+        "global_step": 40,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:51:18.055128",
+        "load_time_s": 0.72,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.169,
+          "slowest_resource_time_s": 0.241,
+          "fastest_resource_time_s": 0.124
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.48699617034515,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 5
+      },
+      {
+        "step": 2,
+        "global_step": 41,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:51:22.318286",
+        "load_time_s": 2.234,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.05,
+          "avg_response_time_s": 0.259,
+          "slowest_resource_time_s": 0.409,
+          "fastest_resource_time_s": 0.148
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.2043810189108,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 5,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 42,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:51:26.881522",
+        "load_time_s": 1.986,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.05,
+          "avg_response_time_s": 0.22,
+          "slowest_resource_time_s": 0.436,
+          "fastest_resource_time_s": 0.141
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.3816070821916,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 5,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 43,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:51:31.672142",
+        "load_time_s": 2.22,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.258,
+          "slowest_resource_time_s": 0.443,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.25476689627675,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 5,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 44,
+        "page": "feature",
+        "action": "feature_3_load",
+        "timestamp": "2025-11-19T12:51:37.109738",
+        "load_time_s": 2.935,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 1.63,
+          "avg_response_time_s": 0.514,
+          "slowest_resource_time_s": 1.558,
+          "fastest_resource_time_s": 0.151
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 114.3433496110334,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 5,
+        "feature_index": 3
+      },
+      {
+        "step": 6,
+        "global_step": 45,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:51:41.260920",
+        "load_time_s": 1.574,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-6"
+                }
+              ],
+              "render_detection_time_ms": 0,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 13,
+              "total_data_transferred_bytes": 26002,
+              "api_calls_count": 11,
+              "avg_processing_time_ms": 21.384615384615383,
+              "total_dom_elements": 892,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.05941704035874439
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 11,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.177,
+          "slowest_resource_time_s": 0.334,
+          "fastest_resource_time_s": 0.123
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 141.23165984629287,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 5
+      },
+      {
+        "step": 7,
+        "global_step": 46,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:51:46.020515",
+        "load_time_s": 4.755,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.755,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.006,
+          "browser_processing_time_ms_s": 4.758
+        },
+        "alert_index": 5,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 8,
+        "global_step": 47,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:51:47.610234",
+        "load_time_s": 1.585,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.585,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 1.586
+        },
+        "alert_index": 5,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_6": [
+      {
+        "step": 1,
+        "global_step": 48,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:51:51.816152",
+        "load_time_s": 0.723,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.39,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.166,
+          "slowest_resource_time_s": 0.237,
+          "fastest_resource_time_s": 0.124
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 143.467002589405,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6
+      },
+      {
+        "step": 2,
+        "global_step": 49,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:51:56.230822",
+        "load_time_s": 2.38,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.41,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.263,
+          "slowest_resource_time_s": 0.576,
+          "fastest_resource_time_s": 0.136
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 143.7011017084462,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 50,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:52:00.814493",
+        "load_time_s": 2.031,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.41,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.03,
+          "avg_response_time_s": 0.235,
+          "slowest_resource_time_s": 0.423,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 142.81862035215218,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 51,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:52:05.605987",
+        "load_time_s": 2.199,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.42,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.234,
+          "slowest_resource_time_s": 0.387,
+          "fastest_resource_time_s": 0.14
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 143.76566197098663,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 52,
+        "page": "feature",
+        "action": "feature_3_load",
+        "timestamp": "2025-11-19T12:52:10.273017",
+        "load_time_s": 2.08,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.42,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.03,
+          "avg_response_time_s": 0.245,
+          "slowest_resource_time_s": 0.448,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 141.21897424125916,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6,
+        "feature_index": 3
+      },
+      {
+        "step": 6,
+        "global_step": 53,
+        "page": "feature",
+        "action": "feature_4_load",
+        "timestamp": "2025-11-19T12:52:14.946531",
+        "load_time_s": 2.087,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.42,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.239,
+          "slowest_resource_time_s": 0.404,
+          "fastest_resource_time_s": 0.136
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 140.88447473071983,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6,
+        "feature_index": 4
+      },
+      {
+        "step": 7,
+        "global_step": 54,
+        "page": "feature",
+        "action": "feature_5_load",
+        "timestamp": "2025-11-19T12:52:19.634122",
+        "load_time_s": 2.044,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.47,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.232,
+          "slowest_resource_time_s": 0.392,
+          "fastest_resource_time_s": 0.138
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 138.84726800519348,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6,
+        "feature_index": 5
+      },
+      {
+        "step": 8,
+        "global_step": 55,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:52:23.815033",
+        "load_time_s": 1.578,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-7"
+                }
+              ],
+              "render_detection_time_ms": 0,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 17,
+              "total_data_transferred_bytes": 22998,
+              "api_calls_count": 11,
+              "avg_processing_time_ms": 0,
+              "total_dom_elements": 899,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.058954393770856504
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.47,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 11,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.156,
+          "slowest_resource_time_s": 0.251,
+          "fastest_resource_time_s": 0.121
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 143.65666058121099,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 6
+      },
+      {
+        "step": 9,
+        "global_step": 56,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:52:28.649159",
+        "load_time_s": 4.828,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.828,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.008,
+          "browser_processing_time_ms_s": 4.832
+        },
+        "alert_index": 6,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 10,
+        "global_step": 57,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:52:30.171752",
+        "load_time_s": 1.52,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.52,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 1.521
+        },
+        "alert_index": 6,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_7": [
+      {
+        "step": 1,
+        "global_step": 58,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:52:34.450830",
+        "load_time_s": 0.774,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.47,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.167,
+          "slowest_resource_time_s": 0.239,
+          "fastest_resource_time_s": 0.126
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.37150935667265,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 7
+      },
+      {
+        "step": 2,
+        "global_step": 59,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:52:38.541286",
+        "load_time_s": 2.024,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.48,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.05,
+          "avg_response_time_s": 0.23,
+          "slowest_resource_time_s": 0.403,
+          "fastest_resource_time_s": 0.146
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 139.78333582946394,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 7,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 60,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:52:43.210377",
+        "load_time_s": 2.025,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.52,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.05,
+          "avg_response_time_s": 0.229,
+          "slowest_resource_time_s": 0.426,
+          "fastest_resource_time_s": 0.137
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 136.53441763586125,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 7,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 61,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:52:48.897454",
+        "load_time_s": 3.101,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.52,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 1.63,
+          "avg_response_time_s": 0.559,
+          "slowest_resource_time_s": 1.695,
+          "fastest_resource_time_s": 0.155
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 105.8232751305322,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 7,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 62,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:52:52.991165",
+        "load_time_s": 1.487,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-8"
+                }
+              ],
+              "render_detection_time_ms": 1,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 12,
+              "total_data_transferred_bytes": 20862,
+              "api_calls_count": 12,
+              "avg_processing_time_ms": 22.833333333333332,
+              "total_dom_elements": 903,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.058693244739756366
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.52,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 12,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.168,
+          "slowest_resource_time_s": 0.324,
+          "fastest_resource_time_s": 0.119
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.3051879962043,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 7
+      },
+      {
+        "step": 6,
+        "global_step": 63,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:52:57.791406",
+        "load_time_s": 4.795,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.795,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.004,
+          "browser_processing_time_ms_s": 4.797
+        },
+        "alert_index": 7,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 7,
+        "global_step": 64,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:52:59.332032",
+        "load_time_s": 1.535,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.535,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.003,
+          "browser_processing_time_ms_s": 1.537
+        },
+        "alert_index": 7,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_8": [
+      {
+        "step": 1,
+        "global_step": 65,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:53:04.068316",
+        "load_time_s": 1.225,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.53,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.156,
+          "slowest_resource_time_s": 0.195,
+          "fastest_resource_time_s": 0.123
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.48844092472788,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 8
+      },
+      {
+        "step": 2,
+        "global_step": 66,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:53:08.457821",
+        "load_time_s": 2.357,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.58,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.213,
+          "slowest_resource_time_s": 0.307,
+          "fastest_resource_time_s": 0.141
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 139.8531541881041,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 8,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 67,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:53:13.193029",
+        "load_time_s": 2.017,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.58,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.04,
+          "avg_response_time_s": 0.237,
+          "slowest_resource_time_s": 0.464,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 134.41531834943925,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 8,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 68,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:53:18.526037",
+        "load_time_s": 2.704,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.58,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 8,
+          "total_transfer_size_mb": 1.63,
+          "avg_response_time_s": 36.197,
+          "slowest_resource_time_s": 285.993,
+          "fastest_resource_time_s": 0.139
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 105.25580652885233,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 8,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 69,
+        "page": "feature",
+        "action": "feature_3_load",
+        "timestamp": "2025-11-19T12:53:23.759866",
+        "load_time_s": 2.607,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.58,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.03,
+          "avg_response_time_s": 0.271,
+          "slowest_resource_time_s": 0.486,
+          "fastest_resource_time_s": 0.141
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 142.3007789095275,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 8,
+        "feature_index": 3
+      },
+      {
+        "step": 6,
+        "global_step": 70,
+        "page": "feature",
+        "action": "feature_4_load",
+        "timestamp": "2025-11-19T12:53:29.078619",
+        "load_time_s": 2.685,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.59,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.372,
+          "slowest_resource_time_s": 0.856,
+          "fastest_resource_time_s": 0.138
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 144.25764715278433,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 8,
+        "feature_index": 4
+      },
+      {
+        "step": 7,
+        "global_step": 71,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:53:33.511643",
+        "load_time_s": 1.807,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-9"
+                }
+              ],
+              "render_detection_time_ms": 1,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 15,
+              "total_data_transferred_bytes": 22727,
+              "api_calls_count": 11,
+              "avg_processing_time_ms": 0.06666666666666667,
+              "total_dom_elements": 909,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.058305830583058306
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.59,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 11,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.227,
+          "slowest_resource_time_s": 0.522,
+          "fastest_resource_time_s": 0.13
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 143.28364170103012,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 8
+      },
+      {
+        "step": 8,
+        "global_step": 72,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:53:38.521134",
+        "load_time_s": 5.002,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 5.002,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 5.008
+        },
+        "alert_index": 8,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 9,
+        "global_step": 73,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:53:40.078920",
+        "load_time_s": 1.547,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.547,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.01,
+          "browser_processing_time_ms_s": 1.552
+        },
+        "alert_index": 8,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ],
+    "alert_9": [
+      {
+        "step": 1,
+        "global_step": 74,
+        "page": "alert_details",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:53:45.019455",
+        "load_time_s": 1.385,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.62,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.178,
+          "slowest_resource_time_s": 0.242,
+          "fastest_resource_time_s": 0.144
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 139.72195331290862,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 9
+      },
+      {
+        "step": 2,
+        "global_step": 75,
+        "page": "feature",
+        "action": "feature_0_load",
+        "timestamp": "2025-11-19T12:53:49.255874",
+        "load_time_s": 2.132,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.64,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.05,
+          "avg_response_time_s": 0.247,
+          "slowest_resource_time_s": 0.418,
+          "fastest_resource_time_s": 0.14
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 138.21803520817417,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 9,
+        "feature_index": 0
+      },
+      {
+        "step": 3,
+        "global_step": 76,
+        "page": "feature",
+        "action": "feature_1_load",
+        "timestamp": "2025-11-19T12:53:54.261563",
+        "load_time_s": 2.156,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.66,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.06,
+          "avg_response_time_s": 0.254,
+          "slowest_resource_time_s": 0.483,
+          "fastest_resource_time_s": 0.142
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 135.65272901372518,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 9,
+        "feature_index": 1
+      },
+      {
+        "step": 4,
+        "global_step": 77,
+        "page": "feature",
+        "action": "feature_2_load",
+        "timestamp": "2025-11-19T12:53:59.258603",
+        "load_time_s": 2.35,
+        "metrics": {},
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.66,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 7,
+          "total_transfer_size_mb": 0.02,
+          "avg_response_time_s": 0.24,
+          "slowest_resource_time_s": 0.375,
+          "fastest_resource_time_s": 0.145
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 141.70101086707245,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 9,
+        "feature_index": 2
+      },
+      {
+        "step": 5,
+        "global_step": 78,
+        "page": "network_visualization",
+        "action": "initial_load",
+        "timestamp": "2025-11-19T12:54:03.351643",
+        "load_time_s": 1.495,
+        "metrics": {
+          "visualization_specific": {
+            "chart_rendering": {
+              "canvas_elements_found": 1,
+              "canvas_elements_with_content": 1,
+              "canvas_details": [
+                {
+                  "index": 0,
+                  "width": 1428,
+                  "height": 793,
+                  "hasContent": true,
+                  "contentMethod": "webgl",
+                  "className": "",
+                  "id": "Graph-chart-10"
+                }
+              ],
+              "render_detection_time_ms": 0,
+              "rendering_likely_complete": true
+            },
+            "data_processing": {
+              "recent_resources_count": 12,
+              "total_data_transferred_bytes": 26570,
+              "api_calls_count": 12,
+              "avg_processing_time_ms": 23.583333333333332,
+              "total_dom_elements": 913,
+              "visualization_dom_elements": 53,
+              "dom_complexity_ratio": 0.05805038335158817
+            },
+            "action_name": "initial_network_viz_load"
+          }
+        },
+        "core_web_vitals": {
+          "largest_contentful_paint_s": null,
+          "first_input_delay_s": null,
+          "cumulative_layout_shift_s_s": 0.0,
+          "first_contentful_paint_s_s_s": 0.002,
+          "time_to_interactive_s_s_s": 0.0
+        },
+        "memory_metrics": {
+          "js_heap_used_mb": null,
+          "js_heap_total_mb": null,
+          "js_heap_limit_mb": null,
+          "system_memory_used_mb": 24.66,
+          "system_memory_percent": 0.1
+        },
+        "resource_timing": {
+          "resource_count": 12,
+          "total_transfer_size_mb": 0.03,
+          "avg_response_time_s": 0.177,
+          "slowest_resource_time_s": 0.318,
+          "fastest_resource_time_s": 0.119
+        },
+        "ui_responsiveness": {
+          "long_tasks_count": 0,
+          "total_blocking_time_s": 0.0,
+          "avg_frame_rate": 141.8283876509435,
+          "interaction_response_time_s": null
+        },
+        "alert_index": 9
+      },
+      {
+        "step": 6,
+        "global_step": 79,
+        "page": "network_visualization",
+        "action": "date_filter_application",
+        "timestamp": "2025-11-19T12:54:08.200402",
+        "load_time_s": 4.846,
+        "metrics": {
+          "filter_name": "date_range",
+          "application_time_ms_s": 4.846,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.004,
+          "browser_processing_time_ms_s": 4.848
+        },
+        "alert_index": 9,
+        "filters": {
+          "date_from": "01/01/2025",
+          "date_to": "30/06/2025"
+        }
+      },
+      {
+        "step": 7,
+        "global_step": 80,
+        "page": "network_visualization",
+        "action": "depth_filter_application",
+        "timestamp": "2025-11-19T12:54:09.942293",
+        "load_time_s": 1.736,
+        "metrics": {
+          "filter_name": "depth",
+          "application_time_ms_s": 1.736,
+          "dom_nodes_added_s": 0.0,
+          "network_requests_added_s": 0.002,
+          "browser_processing_time_ms_s": 1.737
+        },
+        "alert_index": 9,
+        "filters": {
+          "depth": "3"
+        }
+      }
+    ]
+  },
+  "all_measurements": [
+    {
+      "step": 1,
+      "global_step": 1,
+      "page": "alert_list",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:48:38.578700",
+      "load_time_s": 1.858,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 28.38,
+        "system_memory_percent": 0.12
+      },
+      "resource_timing": {
+        "resource_count": 9,
+        "total_transfer_size_mb": 0.01,
+        "avg_response_time_s": 0.176,
+        "slowest_resource_time_s": 0.331,
+        "fastest_resource_time_s": 0.142
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.25476689627635,
+        "interaction_response_time_s": null
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 2,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:48:41.326568",
+      "load_time_s": 0.712,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 28.42,
+        "system_memory_percent": 0.12
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.27,
+        "avg_response_time_s": 0.254,
+        "slowest_resource_time_s": 0.675,
+        "fastest_resource_time_s": 0.152
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 142.34910994345987,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 0
+    },
+    {
+      "step": 2,
+      "global_step": 3,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:48:45.396605",
+      "load_time_s": 2.027,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 28.56,
+        "system_memory_percent": 0.12
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.236,
+        "slowest_resource_time_s": 0.493,
+        "fastest_resource_time_s": 0.141
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 143.29222627190578,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 0,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 4,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:48:50.071090",
+      "load_time_s": 2.117,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 28.59,
+        "system_memory_percent": 0.12
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.243,
+        "slowest_resource_time_s": 0.384,
+        "fastest_resource_time_s": 0.146
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.2475667581732,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 0,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 5,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:48:54.635352",
+      "load_time_s": 2.038,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 28.61,
+        "system_memory_percent": 0.12
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.227,
+        "slowest_resource_time_s": 0.442,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.06061512387228,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 0,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 6,
+      "page": "feature",
+      "action": "feature_3_load",
+      "timestamp": "2025-11-19T12:48:59.912964",
+      "load_time_s": 2.765,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 28.62,
+        "system_memory_percent": 0.12
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 1.63,
+        "avg_response_time_s": 0.552,
+        "slowest_resource_time_s": 1.917,
+        "fastest_resource_time_s": 0.153
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 120.58759044069284,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 0,
+      "feature_index": 3
+    },
+    {
+      "step": 6,
+      "global_step": 7,
+      "page": "feature",
+      "action": "feature_4_load",
+      "timestamp": "2025-11-19T12:49:04.475740",
+      "load_time_s": 2.03,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 28.62,
+        "system_memory_percent": 0.12
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.23,
+        "slowest_resource_time_s": 0.403,
+        "fastest_resource_time_s": 0.146
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.68314391482673,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 0,
+      "feature_index": 4
+    },
+    {
+      "step": 7,
+      "global_step": 8,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:49:08.529632",
+      "load_time_s": 1.482,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-1"
+              }
+            ],
+            "render_detection_time_ms": 0,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 21,
+            "total_data_transferred_bytes": 31065,
+            "api_calls_count": 13,
+            "avg_processing_time_ms": 12.904761904761905,
+            "total_dom_elements": 873,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.06071019473081329
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.44,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 13,
+        "total_transfer_size_mb": 0.03,
+        "avg_response_time_s": 0.163,
+        "slowest_resource_time_s": 0.32,
+        "fastest_resource_time_s": 0.122
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 142.70460147494688,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 0
+    },
+    {
+      "step": 8,
+      "global_step": 9,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:49:13.115240",
+      "load_time_s": 4.583,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.583,
+        "dom_nodes_added_s": -0.001,
+        "network_requests_added_s": 0.003,
+        "browser_processing_time_ms_s": 4.583
+      },
+      "alert_index": 0,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 9,
+      "global_step": 10,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:49:14.654591",
+      "load_time_s": 1.535,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.535,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.003,
+        "browser_processing_time_ms_s": 1.537
+      },
+      "alert_index": 0,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 11,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:49:18.841487",
+      "load_time_s": 0.727,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.44,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.208,
+        "slowest_resource_time_s": 0.274,
+        "fastest_resource_time_s": 0.133
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 143.9582521068889,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 1
+    },
+    {
+      "step": 2,
+      "global_step": 12,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:49:22.984427",
+      "load_time_s": 2.108,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.45,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.06,
+        "avg_response_time_s": 0.258,
+        "slowest_resource_time_s": 0.518,
+        "fastest_resource_time_s": 0.14
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.31383515265296,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 1,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 13,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:49:27.650520",
+      "load_time_s": 2.13,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.47,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.06,
+        "avg_response_time_s": 0.257,
+        "slowest_resource_time_s": 0.499,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.1856752280029,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 1,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 14,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:49:32.222034",
+      "load_time_s": 2.043,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.52,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.06,
+        "avg_response_time_s": 0.24,
+        "slowest_resource_time_s": 0.429,
+        "fastest_resource_time_s": 0.146
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.44366696988183,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 1,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 15,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:49:36.309162",
+      "load_time_s": 1.556,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-2"
+              }
+            ],
+            "render_detection_time_ms": 0,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 12,
+            "total_data_transferred_bytes": 26823,
+            "api_calls_count": 12,
+            "avg_processing_time_ms": 0,
+            "total_dom_elements": 874,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.06064073226544622
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.52,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 12,
+        "total_transfer_size_mb": 0.03,
+        "avg_response_time_s": 0.159,
+        "slowest_resource_time_s": 0.245,
+        "fastest_resource_time_s": 0.123
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.42056868722162,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 1
+    },
+    {
+      "step": 6,
+      "global_step": 16,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:49:40.957745",
+      "load_time_s": 4.645,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.645,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.004,
+        "browser_processing_time_ms_s": 4.646
+      },
+      "alert_index": 1,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 7,
+      "global_step": 17,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:49:42.844980",
+      "load_time_s": 1.881,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.881,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.004,
+        "browser_processing_time_ms_s": 1.883
+      },
+      "alert_index": 1,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 18,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:49:47.055498",
+      "load_time_s": 0.727,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.53,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.173,
+        "slowest_resource_time_s": 0.298,
+        "fastest_resource_time_s": 0.122
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.26052752430914,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 2
+    },
+    {
+      "step": 2,
+      "global_step": 19,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:49:51.232417",
+      "load_time_s": 2.132,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.56,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.228,
+        "slowest_resource_time_s": 0.353,
+        "fastest_resource_time_s": 0.142
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.50002989655803,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 2,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 20,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:49:55.913031",
+      "load_time_s": 2.182,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.64,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.234,
+        "slowest_resource_time_s": 0.415,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.3888206081322,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 2,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 21,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:50:01.296382",
+      "load_time_s": 2.893,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.64,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 1.63,
+        "avg_response_time_s": 0.533,
+        "slowest_resource_time_s": 1.625,
+        "fastest_resource_time_s": 0.158
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 116.85860109267797,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 2,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 22,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:50:06.409636",
+      "load_time_s": 2.568,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-3"
+              }
+            ],
+            "render_detection_time_ms": 1,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 11,
+            "total_data_transferred_bytes": 33310,
+            "api_calls_count": 11,
+            "avg_processing_time_ms": 30.545454545454547,
+            "total_dom_elements": 878,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.06036446469248292
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.62,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 11,
+        "total_transfer_size_mb": 0.03,
+        "avg_response_time_s": 0.224,
+        "slowest_resource_time_s": 0.646,
+        "fastest_resource_time_s": 0.126
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.24036733878975,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 2
+    },
+    {
+      "step": 6,
+      "global_step": 23,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:50:11.097308",
+      "load_time_s": 4.68,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.68,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.007,
+        "browser_processing_time_ms_s": 4.686
+      },
+      "alert_index": 2,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 7,
+      "global_step": 24,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:50:13.065310",
+      "load_time_s": 1.863,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.863,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 1.867
+      },
+      "alert_index": 2,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 25,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:50:17.280699",
+      "load_time_s": 0.727,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.62,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.167,
+        "slowest_resource_time_s": 0.251,
+        "fastest_resource_time_s": 0.124
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.51731217732822,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 3
+    },
+    {
+      "step": 2,
+      "global_step": 26,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:50:21.327632",
+      "load_time_s": 2.015,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.67,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.229,
+        "slowest_resource_time_s": 0.443,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.182797844742,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 3,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 27,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:50:26.015135",
+      "load_time_s": 2.148,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.67,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.257,
+        "slowest_resource_time_s": 0.468,
+        "fastest_resource_time_s": 0.141
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.2317289840895,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 3,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 28,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:50:30.667107",
+      "load_time_s": 2.133,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.67,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.234,
+        "slowest_resource_time_s": 0.378,
+        "fastest_resource_time_s": 0.137
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.37583678036881,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 3,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 29,
+      "page": "feature",
+      "action": "feature_3_load",
+      "timestamp": "2025-11-19T12:50:35.343511",
+      "load_time_s": 2.172,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.69,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.241,
+        "slowest_resource_time_s": 0.403,
+        "fastest_resource_time_s": 0.144
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.25764715278328,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 3,
+      "feature_index": 3
+    },
+    {
+      "step": 6,
+      "global_step": 30,
+      "page": "feature",
+      "action": "feature_4_load",
+      "timestamp": "2025-11-19T12:50:39.875990",
+      "load_time_s": 2.003,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 22.69,
+        "system_memory_percent": 0.09
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.21,
+        "slowest_resource_time_s": 0.294,
+        "fastest_resource_time_s": 0.148
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.1238367859885,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 3,
+      "feature_index": 4
+    },
+    {
+      "step": 7,
+      "global_step": 31,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:50:43.962358",
+      "load_time_s": 1.569,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-4"
+              }
+            ],
+            "render_detection_time_ms": 0,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 20,
+            "total_data_transferred_bytes": 23761,
+            "api_calls_count": 14,
+            "avg_processing_time_ms": 0.1,
+            "total_dom_elements": 884,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.05995475113122172
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.38,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 14,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.146,
+        "slowest_resource_time_s": 0.242,
+        "fastest_resource_time_s": 0.121
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.38737784528084,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 3
+    },
+    {
+      "step": 8,
+      "global_step": 32,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:50:48.665373",
+      "load_time_s": 4.7,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.7,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 4.702
+      },
+      "alert_index": 3,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 9,
+      "global_step": 33,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:50:50.082876",
+      "load_time_s": 1.411,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.411,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 1.413
+      },
+      "alert_index": 3,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 34,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:50:54.470750",
+      "load_time_s": 0.872,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.38,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.23,
+        "slowest_resource_time_s": 0.283,
+        "fastest_resource_time_s": 0.154
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 140.53903197512176,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 4
+    },
+    {
+      "step": 2,
+      "global_step": 35,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:50:58.626614",
+      "load_time_s": 2.122,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.38,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.06,
+        "avg_response_time_s": 0.251,
+        "slowest_resource_time_s": 0.509,
+        "fastest_resource_time_s": 0.138
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.18135919617552,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 4,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 36,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:51:03.182642",
+      "load_time_s": 2.013,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.38,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.06,
+        "avg_response_time_s": 0.233,
+        "slowest_resource_time_s": 0.477,
+        "fastest_resource_time_s": 0.142
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.85369776525783,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 4,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 37,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:51:07.208729",
+      "load_time_s": 1.466,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-5"
+              }
+            ],
+            "render_detection_time_ms": 0,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 8,
+            "total_data_transferred_bytes": 25476,
+            "api_calls_count": 8,
+            "avg_processing_time_ms": 0.25,
+            "total_dom_elements": 887,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.05975197294250282
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 8,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.179,
+        "slowest_resource_time_s": 0.377,
+        "fastest_resource_time_s": 0.123
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.00031889343958,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 4
+    },
+    {
+      "step": 5,
+      "global_step": 38,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:51:11.887690",
+      "load_time_s": 4.676,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.676,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.008,
+        "browser_processing_time_ms_s": 4.676
+      },
+      "alert_index": 4,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 6,
+      "global_step": 39,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:51:13.837224",
+      "load_time_s": 1.932,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.932,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 1.937
+      },
+      "alert_index": 4,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 40,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:51:18.055128",
+      "load_time_s": 0.72,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.169,
+        "slowest_resource_time_s": 0.241,
+        "fastest_resource_time_s": 0.124
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.48699617034515,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 5
+    },
+    {
+      "step": 2,
+      "global_step": 41,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:51:22.318286",
+      "load_time_s": 2.234,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.05,
+        "avg_response_time_s": 0.259,
+        "slowest_resource_time_s": 0.409,
+        "fastest_resource_time_s": 0.148
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.2043810189108,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 5,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 42,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:51:26.881522",
+      "load_time_s": 1.986,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.05,
+        "avg_response_time_s": 0.22,
+        "slowest_resource_time_s": 0.436,
+        "fastest_resource_time_s": 0.141
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.3816070821916,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 5,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 43,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:51:31.672142",
+      "load_time_s": 2.22,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.258,
+        "slowest_resource_time_s": 0.443,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.25476689627675,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 5,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 44,
+      "page": "feature",
+      "action": "feature_3_load",
+      "timestamp": "2025-11-19T12:51:37.109738",
+      "load_time_s": 2.935,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 1.63,
+        "avg_response_time_s": 0.514,
+        "slowest_resource_time_s": 1.558,
+        "fastest_resource_time_s": 0.151
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 114.3433496110334,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 5,
+      "feature_index": 3
+    },
+    {
+      "step": 6,
+      "global_step": 45,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:51:41.260920",
+      "load_time_s": 1.574,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-6"
+              }
+            ],
+            "render_detection_time_ms": 0,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 13,
+            "total_data_transferred_bytes": 26002,
+            "api_calls_count": 11,
+            "avg_processing_time_ms": 21.384615384615383,
+            "total_dom_elements": 892,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.05941704035874439
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 11,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.177,
+        "slowest_resource_time_s": 0.334,
+        "fastest_resource_time_s": 0.123
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 141.23165984629287,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 5
+    },
+    {
+      "step": 7,
+      "global_step": 46,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:51:46.020515",
+      "load_time_s": 4.755,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.755,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.006,
+        "browser_processing_time_ms_s": 4.758
+      },
+      "alert_index": 5,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 8,
+      "global_step": 47,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:51:47.610234",
+      "load_time_s": 1.585,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.585,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 1.586
+      },
+      "alert_index": 5,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 48,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:51:51.816152",
+      "load_time_s": 0.723,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.39,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.166,
+        "slowest_resource_time_s": 0.237,
+        "fastest_resource_time_s": 0.124
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 143.467002589405,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6
+    },
+    {
+      "step": 2,
+      "global_step": 49,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:51:56.230822",
+      "load_time_s": 2.38,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.41,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.263,
+        "slowest_resource_time_s": 0.576,
+        "fastest_resource_time_s": 0.136
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 143.7011017084462,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 50,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:52:00.814493",
+      "load_time_s": 2.031,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.41,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.03,
+        "avg_response_time_s": 0.235,
+        "slowest_resource_time_s": 0.423,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 142.81862035215218,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 51,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:52:05.605987",
+      "load_time_s": 2.199,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.42,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.234,
+        "slowest_resource_time_s": 0.387,
+        "fastest_resource_time_s": 0.14
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 143.76566197098663,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 52,
+      "page": "feature",
+      "action": "feature_3_load",
+      "timestamp": "2025-11-19T12:52:10.273017",
+      "load_time_s": 2.08,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.42,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.03,
+        "avg_response_time_s": 0.245,
+        "slowest_resource_time_s": 0.448,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 141.21897424125916,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6,
+      "feature_index": 3
+    },
+    {
+      "step": 6,
+      "global_step": 53,
+      "page": "feature",
+      "action": "feature_4_load",
+      "timestamp": "2025-11-19T12:52:14.946531",
+      "load_time_s": 2.087,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.42,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.239,
+        "slowest_resource_time_s": 0.404,
+        "fastest_resource_time_s": 0.136
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 140.88447473071983,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6,
+      "feature_index": 4
+    },
+    {
+      "step": 7,
+      "global_step": 54,
+      "page": "feature",
+      "action": "feature_5_load",
+      "timestamp": "2025-11-19T12:52:19.634122",
+      "load_time_s": 2.044,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.47,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.232,
+        "slowest_resource_time_s": 0.392,
+        "fastest_resource_time_s": 0.138
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 138.84726800519348,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6,
+      "feature_index": 5
+    },
+    {
+      "step": 8,
+      "global_step": 55,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:52:23.815033",
+      "load_time_s": 1.578,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-7"
+              }
+            ],
+            "render_detection_time_ms": 0,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 17,
+            "total_data_transferred_bytes": 22998,
+            "api_calls_count": 11,
+            "avg_processing_time_ms": 0,
+            "total_dom_elements": 899,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.058954393770856504
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.47,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 11,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.156,
+        "slowest_resource_time_s": 0.251,
+        "fastest_resource_time_s": 0.121
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 143.65666058121099,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 6
+    },
+    {
+      "step": 9,
+      "global_step": 56,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:52:28.649159",
+      "load_time_s": 4.828,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.828,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.008,
+        "browser_processing_time_ms_s": 4.832
+      },
+      "alert_index": 6,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 10,
+      "global_step": 57,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:52:30.171752",
+      "load_time_s": 1.52,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.52,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 1.521
+      },
+      "alert_index": 6,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 58,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:52:34.450830",
+      "load_time_s": 0.774,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.47,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.167,
+        "slowest_resource_time_s": 0.239,
+        "fastest_resource_time_s": 0.126
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.37150935667265,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 7
+    },
+    {
+      "step": 2,
+      "global_step": 59,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:52:38.541286",
+      "load_time_s": 2.024,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.48,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.05,
+        "avg_response_time_s": 0.23,
+        "slowest_resource_time_s": 0.403,
+        "fastest_resource_time_s": 0.146
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 139.78333582946394,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 7,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 60,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:52:43.210377",
+      "load_time_s": 2.025,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.52,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.05,
+        "avg_response_time_s": 0.229,
+        "slowest_resource_time_s": 0.426,
+        "fastest_resource_time_s": 0.137
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 136.53441763586125,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 7,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 61,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:52:48.897454",
+      "load_time_s": 3.101,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.52,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 1.63,
+        "avg_response_time_s": 0.559,
+        "slowest_resource_time_s": 1.695,
+        "fastest_resource_time_s": 0.155
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 105.8232751305322,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 7,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 62,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:52:52.991165",
+      "load_time_s": 1.487,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-8"
+              }
+            ],
+            "render_detection_time_ms": 1,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 12,
+            "total_data_transferred_bytes": 20862,
+            "api_calls_count": 12,
+            "avg_processing_time_ms": 22.833333333333332,
+            "total_dom_elements": 903,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.058693244739756366
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.52,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 12,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.168,
+        "slowest_resource_time_s": 0.324,
+        "fastest_resource_time_s": 0.119
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.3051879962043,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 7
+    },
+    {
+      "step": 6,
+      "global_step": 63,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:52:57.791406",
+      "load_time_s": 4.795,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.795,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.004,
+        "browser_processing_time_ms_s": 4.797
+      },
+      "alert_index": 7,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 7,
+      "global_step": 64,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:52:59.332032",
+      "load_time_s": 1.535,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.535,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.003,
+        "browser_processing_time_ms_s": 1.537
+      },
+      "alert_index": 7,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 65,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:53:04.068316",
+      "load_time_s": 1.225,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.53,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.156,
+        "slowest_resource_time_s": 0.195,
+        "fastest_resource_time_s": 0.123
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.48844092472788,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 8
+    },
+    {
+      "step": 2,
+      "global_step": 66,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:53:08.457821",
+      "load_time_s": 2.357,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.58,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.213,
+        "slowest_resource_time_s": 0.307,
+        "fastest_resource_time_s": 0.141
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 139.8531541881041,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 8,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 67,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:53:13.193029",
+      "load_time_s": 2.017,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.58,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.04,
+        "avg_response_time_s": 0.237,
+        "slowest_resource_time_s": 0.464,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 134.41531834943925,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 8,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 68,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:53:18.526037",
+      "load_time_s": 2.704,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.58,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 8,
+        "total_transfer_size_mb": 1.63,
+        "avg_response_time_s": 36.197,
+        "slowest_resource_time_s": 285.993,
+        "fastest_resource_time_s": 0.139
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 105.25580652885233,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 8,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 69,
+      "page": "feature",
+      "action": "feature_3_load",
+      "timestamp": "2025-11-19T12:53:23.759866",
+      "load_time_s": 2.607,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.58,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.03,
+        "avg_response_time_s": 0.271,
+        "slowest_resource_time_s": 0.486,
+        "fastest_resource_time_s": 0.141
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 142.3007789095275,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 8,
+      "feature_index": 3
+    },
+    {
+      "step": 6,
+      "global_step": 70,
+      "page": "feature",
+      "action": "feature_4_load",
+      "timestamp": "2025-11-19T12:53:29.078619",
+      "load_time_s": 2.685,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.59,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.372,
+        "slowest_resource_time_s": 0.856,
+        "fastest_resource_time_s": 0.138
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 144.25764715278433,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 8,
+      "feature_index": 4
+    },
+    {
+      "step": 7,
+      "global_step": 71,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:53:33.511643",
+      "load_time_s": 1.807,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-9"
+              }
+            ],
+            "render_detection_time_ms": 1,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 15,
+            "total_data_transferred_bytes": 22727,
+            "api_calls_count": 11,
+            "avg_processing_time_ms": 0.06666666666666667,
+            "total_dom_elements": 909,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.058305830583058306
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.59,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 11,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.227,
+        "slowest_resource_time_s": 0.522,
+        "fastest_resource_time_s": 0.13
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 143.28364170103012,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 8
+    },
+    {
+      "step": 8,
+      "global_step": 72,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:53:38.521134",
+      "load_time_s": 5.002,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 5.002,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 5.008
+      },
+      "alert_index": 8,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 9,
+      "global_step": 73,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:53:40.078920",
+      "load_time_s": 1.547,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.547,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.01,
+        "browser_processing_time_ms_s": 1.552
+      },
+      "alert_index": 8,
+      "filters": {
+        "depth": "3"
+      }
+    },
+    {
+      "step": 1,
+      "global_step": 74,
+      "page": "alert_details",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:53:45.019455",
+      "load_time_s": 1.385,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.62,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.178,
+        "slowest_resource_time_s": 0.242,
+        "fastest_resource_time_s": 0.144
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 139.72195331290862,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 9
+    },
+    {
+      "step": 2,
+      "global_step": 75,
+      "page": "feature",
+      "action": "feature_0_load",
+      "timestamp": "2025-11-19T12:53:49.255874",
+      "load_time_s": 2.132,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.64,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.05,
+        "avg_response_time_s": 0.247,
+        "slowest_resource_time_s": 0.418,
+        "fastest_resource_time_s": 0.14
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 138.21803520817417,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 9,
+      "feature_index": 0
+    },
+    {
+      "step": 3,
+      "global_step": 76,
+      "page": "feature",
+      "action": "feature_1_load",
+      "timestamp": "2025-11-19T12:53:54.261563",
+      "load_time_s": 2.156,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.66,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.06,
+        "avg_response_time_s": 0.254,
+        "slowest_resource_time_s": 0.483,
+        "fastest_resource_time_s": 0.142
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 135.65272901372518,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 9,
+      "feature_index": 1
+    },
+    {
+      "step": 4,
+      "global_step": 77,
+      "page": "feature",
+      "action": "feature_2_load",
+      "timestamp": "2025-11-19T12:53:59.258603",
+      "load_time_s": 2.35,
+      "metrics": {},
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.66,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 7,
+        "total_transfer_size_mb": 0.02,
+        "avg_response_time_s": 0.24,
+        "slowest_resource_time_s": 0.375,
+        "fastest_resource_time_s": 0.145
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 141.70101086707245,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 9,
+      "feature_index": 2
+    },
+    {
+      "step": 5,
+      "global_step": 78,
+      "page": "network_visualization",
+      "action": "initial_load",
+      "timestamp": "2025-11-19T12:54:03.351643",
+      "load_time_s": 1.495,
+      "metrics": {
+        "visualization_specific": {
+          "chart_rendering": {
+            "canvas_elements_found": 1,
+            "canvas_elements_with_content": 1,
+            "canvas_details": [
+              {
+                "index": 0,
+                "width": 1428,
+                "height": 793,
+                "hasContent": true,
+                "contentMethod": "webgl",
+                "className": "",
+                "id": "Graph-chart-10"
+              }
+            ],
+            "render_detection_time_ms": 0,
+            "rendering_likely_complete": true
+          },
+          "data_processing": {
+            "recent_resources_count": 12,
+            "total_data_transferred_bytes": 26570,
+            "api_calls_count": 12,
+            "avg_processing_time_ms": 23.583333333333332,
+            "total_dom_elements": 913,
+            "visualization_dom_elements": 53,
+            "dom_complexity_ratio": 0.05805038335158817
+          },
+          "action_name": "initial_network_viz_load"
+        }
+      },
+      "core_web_vitals": {
+        "largest_contentful_paint_s": null,
+        "first_input_delay_s": null,
+        "cumulative_layout_shift_s_s": 0.0,
+        "first_contentful_paint_s_s_s": 0.002,
+        "time_to_interactive_s_s_s": 0.0
+      },
+      "memory_metrics": {
+        "js_heap_used_mb": null,
+        "js_heap_total_mb": null,
+        "js_heap_limit_mb": null,
+        "system_memory_used_mb": 24.66,
+        "system_memory_percent": 0.1
+      },
+      "resource_timing": {
+        "resource_count": 12,
+        "total_transfer_size_mb": 0.03,
+        "avg_response_time_s": 0.177,
+        "slowest_resource_time_s": 0.318,
+        "fastest_resource_time_s": 0.119
+      },
+      "ui_responsiveness": {
+        "long_tasks_count": 0,
+        "total_blocking_time_s": 0.0,
+        "avg_frame_rate": 141.8283876509435,
+        "interaction_response_time_s": null
+      },
+      "alert_index": 9
+    },
+    {
+      "step": 6,
+      "global_step": 79,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "timestamp": "2025-11-19T12:54:08.200402",
+      "load_time_s": 4.846,
+      "metrics": {
+        "filter_name": "date_range",
+        "application_time_ms_s": 4.846,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.004,
+        "browser_processing_time_ms_s": 4.848
+      },
+      "alert_index": 9,
+      "filters": {
+        "date_from": "01/01/2025",
+        "date_to": "30/06/2025"
+      }
+    },
+    {
+      "step": 7,
+      "global_step": 80,
+      "page": "network_visualization",
+      "action": "depth_filter_application",
+      "timestamp": "2025-11-19T12:54:09.942293",
+      "load_time_s": 1.736,
+      "metrics": {
+        "filter_name": "depth",
+        "application_time_ms_s": 1.736,
+        "dom_nodes_added_s": 0.0,
+        "network_requests_added_s": 0.002,
+        "browser_processing_time_ms_s": 1.737
+      },
+      "alert_index": 9,
+      "filters": {
+        "depth": "3"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 80,
+    "pages_measured": [
+      "alert_details",
+      "network_visualization",
+      "feature",
+      "alert_list"
+    ],
+    "average_load_time_s": 2.231,
+    "min_load_time_s": 0.712,
+    "max_load_time_s": 5.002,
+    "slowest_step": {
+      "step": 8,
+      "global_step": 72,
+      "alert_index": 8,
+      "page": "network_visualization",
+      "action": "date_filter_application",
+      "load_time_s": 5.002
+    },
+    "fastest_step": {
+      "step": 1,
+      "global_step": 2,
+      "alert_index": 0,
+      "page": "alert_details",
+      "action": "initial_load",
+      "load_time_s": 0.712
+    }
+  },
+  "alert_summaries": {
+    "alert_0": {
+      "total_measurements": 9,
+      "total_time_s": 19.289,
+      "avg_time_s": 2.143,
+      "min_time_s": 0.712,
+      "max_time_s": 4.583,
+      "alert_details_avg_s": 0.712,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.195,
+      "feature_count": 5,
+      "network_visualization_avg_s": 2.533,
+      "network_visualization_count": 3
+    },
+    "alert_1": {
+      "total_measurements": 7,
+      "total_time_s": 15.09,
+      "avg_time_s": 2.156,
+      "min_time_s": 0.727,
+      "max_time_s": 4.645,
+      "alert_details_avg_s": 0.727,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.094,
+      "feature_count": 3,
+      "network_visualization_avg_s": 2.694,
+      "network_visualization_count": 3
+    },
+    "alert_2": {
+      "total_measurements": 7,
+      "total_time_s": 17.045,
+      "avg_time_s": 2.435,
+      "min_time_s": 0.727,
+      "max_time_s": 4.68,
+      "alert_details_avg_s": 0.727,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.402,
+      "feature_count": 3,
+      "network_visualization_avg_s": 3.037,
+      "network_visualization_count": 3
+    },
+    "alert_3": {
+      "total_measurements": 9,
+      "total_time_s": 18.878,
+      "avg_time_s": 2.098,
+      "min_time_s": 0.727,
+      "max_time_s": 4.7,
+      "alert_details_avg_s": 0.727,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.094,
+      "feature_count": 5,
+      "network_visualization_avg_s": 2.56,
+      "network_visualization_count": 3
+    },
+    "alert_4": {
+      "total_measurements": 6,
+      "total_time_s": 13.081,
+      "avg_time_s": 2.18,
+      "min_time_s": 0.872,
+      "max_time_s": 4.676,
+      "alert_details_avg_s": 0.872,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.067,
+      "feature_count": 2,
+      "network_visualization_avg_s": 2.691,
+      "network_visualization_count": 3
+    },
+    "alert_5": {
+      "total_measurements": 8,
+      "total_time_s": 18.009,
+      "avg_time_s": 2.251,
+      "min_time_s": 0.72,
+      "max_time_s": 4.755,
+      "alert_details_avg_s": 0.72,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.344,
+      "feature_count": 4,
+      "network_visualization_avg_s": 2.638,
+      "network_visualization_count": 3
+    },
+    "alert_6": {
+      "total_measurements": 10,
+      "total_time_s": 21.47,
+      "avg_time_s": 2.147,
+      "min_time_s": 0.723,
+      "max_time_s": 4.828,
+      "alert_details_avg_s": 0.723,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.137,
+      "feature_count": 6,
+      "network_visualization_avg_s": 2.642,
+      "network_visualization_count": 3
+    },
+    "alert_7": {
+      "total_measurements": 7,
+      "total_time_s": 15.741,
+      "avg_time_s": 2.249,
+      "min_time_s": 0.774,
+      "max_time_s": 4.795,
+      "alert_details_avg_s": 0.774,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.383,
+      "feature_count": 3,
+      "network_visualization_avg_s": 2.606,
+      "network_visualization_count": 3
+    },
+    "alert_8": {
+      "total_measurements": 9,
+      "total_time_s": 21.951,
+      "avg_time_s": 2.439,
+      "min_time_s": 1.225,
+      "max_time_s": 5.002,
+      "alert_details_avg_s": 1.225,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.474,
+      "feature_count": 5,
+      "network_visualization_avg_s": 2.785,
+      "network_visualization_count": 3
+    },
+    "alert_9": {
+      "total_measurements": 7,
+      "total_time_s": 16.1,
+      "avg_time_s": 2.3,
+      "min_time_s": 1.385,
+      "max_time_s": 4.846,
+      "alert_details_avg_s": 1.385,
+      "alert_details_count": 1,
+      "feature_avg_s": 2.213,
+      "feature_count": 3,
+      "network_visualization_avg_s": 2.692,
+      "network_visualization_count": 3
+    }
+  },
+  "multi_alert_summary": {
+    "alerts_tested": 10,
+    "avg_step_time_s": 2.24,          
+    "total_cumulative_time_s": 176.654, 
+    "avg_alert_duration_s": 17.665,
+    "fastest_alert": {
+      "alert_id": "alert_3",
+      "avg_time_s": 2.098,
+      "total_time_s": 18.878
+    },
+    "slowest_alert": {
+      "alert_id": "alert_8",
+      "avg_time_s": 2.439,
+      "total_time_s": 21.951
+    },
+    "bucket_averages": {
+      "alert_details_avg_s": 0.859,
+      "alert_details_count": 10,
+      "feature_loading_avg_s": 2.242,
+      "feature_loading_count": 39,
+      "network_viz_avg_s": 2.688,
+      "network_viz_count": 30
+    }
+  },
+  "measurements_without_alert": 1
+}

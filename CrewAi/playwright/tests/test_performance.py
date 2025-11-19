@@ -1,26 +1,38 @@
 """
 Main performance test script.
-Executes the complete test flow and generates performance report.
+Executes multi-alert performance testing and generates comprehensive report.
 
-Test Flow (actions in parentheses are not measured):
+Multi-Alert Test Flow (ALERTS_TO_TEST_COUNT=3 alerts):
 0. (Keycloak authentication)
 1. (Navigate to alert list page)
    1.1. (Select use case from dropdown: dpv:demo_fuib)
    1.2. MEASURE: Alert list page load time
-2. MEASURE: Click first alert and measure alert details initial load
-3. Navigate through all feature widgets:
-   MEASURE: Each feature load time (feature_0, feature_1, etc.)
-   (Navigate back after each feature)
-4. MEASURE: Open network visualization and measure initial load
-5. (Apply date range filter: 01/01/2025 - 30/06/2025)
-6. (Apply depth filter: depth=3)
-7. Generate JSON report
 
-Measurements captured (with comprehensive metrics):
-- alert_list.initial_load
-- alert_details.initial_load
-- feature.feature_0_load, feature.feature_1_load, etc.
-- network_visualization.initial_load
+For each alert:
+2.X. MEASURE: Click alert X and measure alert details initial load
+3.X. Navigate through all feature widgets for alert X:
+     MEASURE: Each feature load time (feature_0, feature_1, etc.)
+     (Navigate back after each feature)
+4.X. MEASURE: Open network visualization for alert X
+5.X. MEASURE: Apply date range filter (01/01/2025 - 30/06/2025)
+6.X. MEASURE: Apply depth filter (depth=3)
+7.X. (Navigate back to alert list using 'All alerts' link - if not last alert)
+
+8. Generate comprehensive JSON report with multi-alert aggregations
+
+Measurements captured per alert (with comprehensive metrics and alert_index):
+- alert_list.initial_load (once)
+- alert_details.initial_load (per alert)
+- feature.feature_0_load, feature.feature_1_load, etc. (per alert)
+- network_visualization.initial_load (per alert)
+- network_visualization.date_filter_application (per alert)
+- network_visualization.depth_filter_application (per alert)
+
+JSON Output includes:
+- Individual measurements with alert_index
+- alert_summaries: Per-alert performance breakdown
+- multi_alert_summary: Aggregated statistics across all alerts
+- bucket_averages: Average performance by page type (alert_details, feature_loading, network_viz)
 """
 
 import logging
@@ -41,7 +53,9 @@ from config.config import (
     BROWSER_ARGS,
     PERFORMANCE_CONFIG,
     PERFORMANCE_THRESHOLDS,
-    TestData
+    TestData,
+    ALERTS_TO_TEST_COUNT,
+    Selectors
 )
 from config.runtime_config import get_config_value, setup_runtime_config
 from utils.network_emulator import NetworkEmulator
@@ -285,196 +299,264 @@ def run_performance_test():
                 )
 
             # ================================================================
-            # Step 2: Click First Alert and Measure Alert Details Initial Load
+            # Step 2-N: Test Multiple Alerts (Loop through available alerts)
             # ================================================================
-            logger.info("\n--- Step 2: Loading Alert Details Page with Comprehensive Metrics ---")
+            logger.info(f"\n--- Starting Multi-Alert Testing ({ALERTS_TO_TEST_COUNT} alerts) ---")
+            
+            # Check how many alerts are actually available
+            alerts_available = alert_list.get_elements(Selectors.ALERT_TITLE).count()
+            logger.info(f"Found {alerts_available} alerts available on the page")
+            
+            # Test only the number of alerts that are actually available
+            alerts_to_test = min(ALERTS_TO_TEST_COUNT, alerts_available)
+            if alerts_to_test < ALERTS_TO_TEST_COUNT:
+                logger.warning(f"Only {alerts_to_test} alerts available, testing {alerts_to_test} instead of {ALERTS_TO_TEST_COUNT}")
 
             # Create alert_details page object for measurement
             alert_details = AlertDetailsPage(page)
 
-            # Use comprehensive measurement if available, fallback to basic measurement
-            try:
-                load_time_ms, basic_metrics, core_web_vitals, memory_metrics, resource_timing, ui_responsiveness = \
-                    alert_list.measure_comprehensive_performance(
-                        action_callback=lambda: alert_list.click_first_alert(),
-                        measure_frame_rate=True,
-                        measure_memory=True,
-                        measure_resources=True,
-                        measure_responsiveness=True
-                    )
+            # Test each alert in sequence
+            for alert_index in range(alerts_to_test):
+                logger.info(f"\n=== TESTING ALERT {alert_index + 1}/{alerts_to_test} ===")
 
-                tracker.add_measurement(
-                    page="alert_details",
-                    action="initial_load",
-                    load_time_ms=load_time_ms,
-                    metrics=basic_metrics,
-                    core_web_vitals=core_web_vitals,
-                    memory_metrics=memory_metrics,
-                    resource_timing=resource_timing,
-                    ui_responsiveness=ui_responsiveness
-                )
-
-                log_performance_insights("Alert Details Initial Load", core_web_vitals, memory_metrics, ui_responsiveness)
-
-            except AttributeError:
-                # Fallback to basic measurement if comprehensive method not available
-                logger.debug("Using basic measurement (comprehensive method not available)")
-                load_time, metrics = alert_list.click_first_alert()
-                tracker.add_measurement(
-                    page="alert_details",
-                    action="initial_load",
-                    load_time_ms=load_time,
-                    metrics=metrics
-                )
-                logger.debug(f"First alert clicked in {load_time/1000:.3f}s")
-
-            # ================================================================
-            # Step 3: Navigate through all feature widgets
-            # ================================================================
-            logger.info("\n--- Step 3: Navigating Feature Widgets ---")
-
-            # Get feature count
-            feature_count = alert_details.get_feature_widget_count()
-            logger.debug(f"Found {feature_count} feature widgets to navigate")
-
-            # Navigate each feature with comprehensive measurement
-            for i in range(feature_count):
-                logger.debug(f"\n  Feature {i + 1}/{feature_count} with Comprehensive Metrics")
-
-                # Try comprehensive measurement, fallback to basic
                 try:
-                    load_time_ms, basic_metrics, core_web_vitals, memory_metrics, resource_timing, ui_responsiveness = \
-                        alert_details.measure_comprehensive_performance(
-                            action_callback=lambda idx=i: alert_details.navigate_to_feature(idx),
-                            measure_frame_rate=True,
-                            measure_memory=True,
-                            measure_resources=True,
-                            measure_responsiveness=True
+                    # ================================================================
+                    # Step 2.X: Click Alert and Measure Alert Details Initial Load
+                    # ================================================================
+                    logger.info(f"\n--- Alert {alert_index}: Loading Alert Details Page ---")
+
+                    # Use comprehensive measurement if available, fallback to basic measurement
+                    try:
+                        load_time_ms, basic_metrics, core_web_vitals, memory_metrics, resource_timing, ui_responsiveness = \
+                            alert_list.measure_comprehensive_performance(
+                                action_callback=lambda idx=alert_index: alert_list.click_alert_by_index(idx),
+                                measure_frame_rate=True,
+                                measure_memory=True,
+                                measure_resources=True,
+                                measure_responsiveness=True
+                            )
+
+                        tracker.add_measurement(
+                            page="alert_details",
+                            action="initial_load",
+                            load_time_ms=load_time_ms,
+                            metrics=basic_metrics,
+                            core_web_vitals=core_web_vitals,
+                            memory_metrics=memory_metrics,
+                            resource_timing=resource_timing,
+                            ui_responsiveness=ui_responsiveness,
+                            alert_index=alert_index
                         )
-                    
-                    tracker.add_measurement(
-                        page="feature",
-                        action=f"feature_{i}_load",
-                        load_time_ms=load_time_ms,
-                        metrics=basic_metrics,
-                        core_web_vitals=core_web_vitals,
-                        memory_metrics=memory_metrics,
-                        resource_timing=resource_timing,
-                        ui_responsiveness=ui_responsiveness,
-                        feature_index=i
-                    )
-                    
-                    log_performance_insights(f"Feature {i}", core_web_vitals, memory_metrics, ui_responsiveness)
-                    
-                except AttributeError:
-                    # Fallback to basic measurement
-                    nav_load_time, nav_metrics = alert_details.navigate_to_feature(i)
-                    tracker.add_measurement(
-                        page="feature",
-                        action=f"feature_{i}_load",
-                        load_time_ms=nav_load_time,
-                        metrics=nav_metrics,
-                        feature_index=i
-                    )
 
-                # Navigate back (not measured)
-                back_load_time, back_metrics = alert_details.navigate_back()
-                logger.debug(f"  Navigate back completed in {back_load_time/1000:.3f}s")
+                        log_performance_insights(f"Alert {alert_index} Details Load", core_web_vitals, memory_metrics, ui_responsiveness)
+
+                    except AttributeError:
+                        # Fallback to basic measurement if comprehensive method not available
+                        logger.debug("Using basic measurement (comprehensive method not available)")
+                        load_time, metrics = alert_list.click_alert_by_index(alert_index)
+                        tracker.add_measurement(
+                            page="alert_details",
+                            action="initial_load",
+                            load_time_ms=load_time,
+                            metrics=metrics,
+                            alert_index=alert_index
+                        )
+                        logger.debug(f"Alert {alert_index} clicked in {load_time/1000:.3f}s")
+
+                    # ================================================================
+                    # Step 3.X: Navigate through all feature widgets for this alert
+                    # ================================================================
+                    logger.info(f"\n--- Alert {alert_index}: Navigating Feature Widgets ---")
+
+                    # Get feature count
+                    feature_count = alert_details.get_feature_widget_count()
+                    logger.debug(f"Found {feature_count} feature widgets to navigate for alert {alert_index}")
+
+                    # Navigate each feature with comprehensive measurement
+                    for i in range(feature_count):
+                        logger.debug(f"\n  Alert {alert_index}, Feature {i + 1}/{feature_count} with Comprehensive Metrics")
+
+                        # Try comprehensive measurement, fallback to basic
+                        try:
+                            load_time_ms, basic_metrics, core_web_vitals, memory_metrics, resource_timing, ui_responsiveness = \
+                                alert_details.measure_comprehensive_performance(
+                                    action_callback=lambda idx=i: alert_details.navigate_to_feature(idx),
+                                    measure_frame_rate=True,
+                                    measure_memory=True,
+                                    measure_resources=True,
+                                    measure_responsiveness=True
+                                )
+                            
+                            tracker.add_measurement(
+                                page="feature",
+                                action=f"feature_{i}_load",
+                                load_time_ms=load_time_ms,
+                                metrics=basic_metrics,
+                                core_web_vitals=core_web_vitals,
+                                memory_metrics=memory_metrics,
+                                resource_timing=resource_timing,
+                                ui_responsiveness=ui_responsiveness,
+                                feature_index=i,
+                                alert_index=alert_index
+                            )
+                            
+                            log_performance_insights(f"Alert {alert_index} - Feature {i}", core_web_vitals, memory_metrics, ui_responsiveness)
+                            
+                        except AttributeError:
+                            # Fallback to basic measurement
+                            nav_load_time, nav_metrics = alert_details.navigate_to_feature(i)
+                            tracker.add_measurement(
+                                page="feature",
+                                action=f"feature_{i}_load",
+                                load_time_ms=nav_load_time,
+                                metrics=nav_metrics,
+                                feature_index=i,
+                                alert_index=alert_index
+                            )
+
+                        # Navigate back (not measured)
+                        back_load_time, back_metrics = alert_details.navigate_back()
+                        logger.debug(f"  Navigate back completed in {back_load_time/1000:.3f}s")
+
+                    # ================================================================
+                    # Step 4.X: Open Network Visualization and Measure Initial Load
+                    # ================================================================
+                    logger.info(f"\n--- Alert {alert_index}: Opening Network Visualization ---")
+                    network_viz = NetworkVisualizationPage(page)
+
+                    # Use comprehensive measurement if available, fallback to basic measurement
+                    try:
+                        load_time_ms, enhanced_metrics, core_web_vitals, memory_metrics, resource_timing, ui_responsiveness = \
+                            network_viz.measure_network_visualization_comprehensive_performance(
+                                action_callback=lambda: network_viz.open_network_visualization(),
+                                action_name="initial_network_viz_load",
+                                wait_for_completion=True
+                            )
+
+                        tracker.add_measurement(
+                            page="network_visualization",
+                            action="initial_load",
+                            load_time_ms=load_time_ms,
+                            metrics=enhanced_metrics,
+                            core_web_vitals=core_web_vitals,
+                            memory_metrics=memory_metrics,
+                            resource_timing=resource_timing,
+                            ui_responsiveness=ui_responsiveness,
+                            alert_index=alert_index
+                        )
+
+                        log_performance_insights(f"Alert {alert_index} - Network Visualization Load", core_web_vitals, memory_metrics, ui_responsiveness)
+
+                    except AttributeError:
+                        # Fallback to basic measurement if comprehensive method not available
+                        logger.debug("Using basic measurement (comprehensive method not available)")
+                        success = network_viz.open_network_visualization()
+                        if not success:
+                            raise Exception(f"Failed to open network visualization for alert {alert_index}")
+
+                    logger.debug(f"Network visualization opened for alert {alert_index}")
+
+                    # ================================================================
+                    # Step 5.X: Apply Date Range Filter with Performance Measurement
+                    # ================================================================
+                    logger.info(f"\n--- Alert {alert_index}: Applying Date Range Filter ---")
+                    
+                    try:
+                        # Measure date filter application performance
+                        date_filter_time_ms, date_filter_metrics = network_viz.measure_filter_application_performance(
+                            filter_action=lambda: network_viz.set_date_range(),
+                            filter_name="date_range"
+                        )
+                        
+                        tracker.add_measurement(
+                            page="network_visualization", 
+                            action="date_filter_application",
+                            load_time_ms=date_filter_time_ms,
+                            metrics=date_filter_metrics,
+                            filters={"date_from": "01/01/2025", "date_to": "30/06/2025"},
+                            alert_index=alert_index
+                        )
+                        
+                    except AttributeError:
+                        # Fallback to basic filter application
+                        logger.debug("Using basic date filter application")
+                        date_success = network_viz.set_date_range()
+                        if not date_success:
+                            raise Exception(f"Failed to set date range filter for alert {alert_index}")
+                            
+                    logger.debug(f"Date range filter applied for alert {alert_index}")
+
+                    # ================================================================
+                    # Step 6.X: Apply Depth Filter with Performance Measurement
+                    # ================================================================  
+                    logger.info(f"\n--- Alert {alert_index}: Applying Depth Filter ---")
+                    
+                    try:
+                        # Measure depth filter application performance
+                        depth_filter_time_ms, depth_filter_metrics = network_viz.measure_filter_application_performance(
+                            filter_action=lambda: network_viz.set_depth(),
+                            filter_name="depth"
+                        )
+                        
+                        tracker.add_measurement(
+                            page="network_visualization",
+                            action="depth_filter_application", 
+                            load_time_ms=depth_filter_time_ms,
+                            metrics=depth_filter_metrics,
+                            filters={"depth": "3"},
+                            alert_index=alert_index
+                        )
+                        
+                    except AttributeError:
+                        # Fallback to basic filter application
+                        logger.debug("Using basic depth filter application")
+                        depth_success = network_viz.set_depth()
+                        if not depth_success:
+                            raise Exception(f"Failed to set depth filter for alert {alert_index}")
+                            
+                    logger.debug(f"Depth filter applied for alert {alert_index}")
+
+                    # ================================================================
+                    # Step 7.X: Navigate back to Alert List (if not the last alert)
+                    # ================================================================
+                    if alert_index < alerts_to_test - 1:  # Don't navigate back after the last alert
+                        logger.info(f"\n--- Alert {alert_index}: Navigating back to Alert List ---")
+                        
+                        try:
+                            # Navigate back to alert list
+                            back_load_time, back_metrics = alert_list.navigate_back_to_alert_list()
+                            logger.debug(f"Navigation back to alert list completed in {back_load_time/1000:.3f}s")
+                            
+                            # Small delay to let the page stabilize before next alert
+                            time.sleep(1)
+                            
+                        except Exception as e:
+                            logger.error(f"Failed to navigate back to alert list from alert {alert_index}: {e}")
+                            raise
+
+                    logger.info(f"=== COMPLETED ALERT {alert_index + 1}/{alerts_to_test} ===")
+
+                except Exception as e:
+                    logger.error(f"Error testing alert {alert_index}: {e}", exc_info=True)
+                    
+                    # Try to navigate back to alert list for next iteration
+                    if alert_index < ALERTS_TO_TEST_COUNT - 1:
+                        try:
+                            logger.info(f"Attempting recovery - navigating back to alert list")
+                            alert_list.navigate_back_to_alert_list()
+                            time.sleep(2)  # Extra recovery time
+                        except Exception as recovery_error:
+                            logger.error(f"Recovery failed: {recovery_error}")
+                            raise  # Stop the test if recovery fails
+                    
+                    # Continue to next alert
+                    continue
+
+            logger.info(f"\n=== COMPLETED ALL {alerts_to_test} ALERTS ===")
 
             # ================================================================
-            # Step 4: Open Network Visualization and Measure Initial Load
+            # Final Step: Test completed - no more navigation needed
             # ================================================================
-            logger.info("\n--- Step 4: Opening Network Visualization with Comprehensive Metrics ---")
-            network_viz = NetworkVisualizationPage(page)
-
-            # Use comprehensive measurement if available, fallback to basic measurement
-            try:
-                load_time_ms, enhanced_metrics, core_web_vitals, memory_metrics, resource_timing, ui_responsiveness = \
-                    network_viz.measure_network_visualization_comprehensive_performance(
-                        action_callback=lambda: network_viz.open_network_visualization(),
-                        action_name="initial_network_viz_load",
-                        wait_for_completion=True
-                    )
-
-                tracker.add_measurement(
-                    page="network_visualization",
-                    action="initial_load",
-                    load_time_ms=load_time_ms,
-                    metrics=enhanced_metrics,
-                    core_web_vitals=core_web_vitals,
-                    memory_metrics=memory_metrics,
-                    resource_timing=resource_timing,
-                    ui_responsiveness=ui_responsiveness
-                )
-
-                log_performance_insights("Network Visualization Initial Load", core_web_vitals, memory_metrics, ui_responsiveness)
-
-            except AttributeError:
-                # Fallback to basic measurement if comprehensive method not available
-                logger.debug("Using basic measurement (comprehensive method not available)")
-                success = network_viz.open_network_visualization()
-                if not success:
-                    raise Exception("Failed to open network visualization")
-
-            logger.debug("Network visualization opened and ready for filters")
-
-            # ================================================================
-            # Step 5: Apply Date Range Filter with Performance Measurement
-            # ================================================================
-            logger.info("\n--- Step 5: Applying Date Range Filter with Performance Measurement ---")
-            
-            try:
-                # Measure date filter application performance
-                date_filter_time_ms, date_filter_metrics = network_viz.measure_filter_application_performance(
-                    filter_action=lambda: network_viz.set_date_range(),
-                    filter_name="date_range"
-                )
-                
-                tracker.add_measurement(
-                    page="network_visualization", 
-                    action="date_filter_application",
-                    load_time_ms=date_filter_time_ms,
-                    metrics=date_filter_metrics,
-                    filters={"date_from": "01/01/2025", "date_to": "30/06/2025"}
-                )
-                
-            except AttributeError:
-                # Fallback to basic filter application
-                logger.debug("Using basic date filter application")
-                date_success = network_viz.set_date_range()
-                if not date_success:
-                    raise Exception("Failed to set date range filter")
-                    
-            logger.debug("Date range filter applied successfully")
-
-            # ================================================================
-            # Step 6: Apply Depth Filter with Performance Measurement
-            # ================================================================  
-            logger.info("\n--- Step 6: Applying Depth Filter with Performance Measurement ---")
-            
-            try:
-                # Measure depth filter application performance
-                depth_filter_time_ms, depth_filter_metrics = network_viz.measure_filter_application_performance(
-                    filter_action=lambda: network_viz.set_depth(),
-                    filter_name="depth"
-                )
-                
-                tracker.add_measurement(
-                    page="network_visualization",
-                    action="depth_filter_application", 
-                    load_time_ms=depth_filter_time_ms,
-                    metrics=depth_filter_metrics,
-                    filters={"depth": "3"}
-                )
-                
-            except AttributeError:
-                # Fallback to basic filter application
-                logger.debug("Using basic depth filter application")
-                depth_success = network_viz.set_depth()
-                if not depth_success:
-                    raise Exception("Failed to set depth filter")
-                    
-            logger.debug("Depth filter applied successfully")
 
             # ================================================================
             # Generate Report
@@ -496,6 +578,8 @@ def run_performance_test():
 
             # Print enhanced summary
             summary = tracker.calculate_summary()
+            multi_alert_summary = tracker.calculate_multi_alert_summary()
+            
             logger.info("\n--- Basic Performance Summary ---")
             logger.info(f"Total steps: {summary['total_steps']}")
             logger.info(f"Average load time: {summary['average_load_time_s']:.3f}s")
@@ -505,6 +589,31 @@ def run_performance_test():
             logger.info(f"Slowest step: {summary['slowest_step']['page']} - "
                        f"{summary['slowest_step']['action']} "
                        f"({summary['slowest_step']['load_time_s']:.3f}s)")
+            
+            # Print multi-alert summary if available
+            if multi_alert_summary and multi_alert_summary.get('multi_alert_summary'):
+                mas = multi_alert_summary['multi_alert_summary']
+                logger.info("\n--- Multi-Alert Performance Summary ---")
+                logger.info(f"Alerts tested: {mas['alerts_tested']}")
+                logger.info(f"Average step time: {mas['avg_step_time_s']:.3f}s")
+                logger.info(f"Average alert duration: {mas['avg_alert_duration_s']:.3f}s")
+                logger.info(f"Total cumulative time: {mas['total_cumulative_time_s']:.3f}s")
+                
+                if mas.get('fastest_alert'):
+                    fa = mas['fastest_alert']
+                    logger.info(f"Fastest alert: {fa['alert_id']} ({fa['avg_time_s']:.3f}s avg)")
+                
+                if mas.get('slowest_alert'):
+                    sa = mas['slowest_alert']
+                    logger.info(f"Slowest alert: {sa['alert_id']} ({sa['avg_time_s']:.3f}s avg)")
+                
+                # Print bucket averages
+                if mas.get('bucket_averages'):
+                    ba = mas['bucket_averages']
+                    logger.info("\n--- Bucket Performance Averages ---")
+                    logger.info(f"Alert Details: {ba.get('alert_details_avg_s', 0):.3f}s (count: {ba.get('alert_details_count', 0)})")
+                    logger.info(f"Feature Loading: {ba.get('feature_loading_avg_s', 0):.3f}s (count: {ba.get('feature_loading_count', 0)})")
+                    logger.info(f"Network Viz: {ba.get('network_viz_avg_s', 0):.3f}s (count: {ba.get('network_viz_count', 0)})")
             
             # Generate comprehensive performance summary
             generate_performance_summary(tracker, memory_samples)

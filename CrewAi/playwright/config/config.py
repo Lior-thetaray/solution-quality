@@ -17,6 +17,9 @@ NETWORK_CONFIG = {
     "latency": 40                       # 40 ms ping
 }
 
+# Multi-Alert Testing Configuration
+ALERTS_TO_TEST_COUNT = 10  # Number of alerts to test in sequence
+
 
 # Browser Configuration
 VIEWPORT = {

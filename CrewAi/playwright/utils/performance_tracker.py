@@ -74,6 +74,9 @@ class PerformanceTracker:
         self._memory_monitoring = False
         self._memory_samples: List[Dict[str, Any]] = []
         self._memory_thread = None
+        self._memory_monitoring = False
+        self._memory_samples: List[Dict[str, Any]] = []
+        self._memory_thread = None
 
     def add_measurement(
         self,
@@ -85,6 +88,7 @@ class PerformanceTracker:
         memory_metrics: Optional[MemoryMetrics] = None,
         resource_timing: Optional[ResourceTimingMetrics] = None,
         ui_responsiveness: Optional[UIResponsivenessMetrics] = None,
+        alert_index: Optional[int] = None,
         **kwargs
     ) -> None:
         """
@@ -101,13 +105,24 @@ class PerformanceTracker:
             ui_responsiveness: UI responsiveness metrics
             **kwargs: Additional data to include (e.g., feature_index, filters)
         """
-        self.step_counter += 1
+        # Handle per-alert step counting
+        if alert_index is not None:
+            # Group measurements by alert - each alert starts from step 1
+            alert_measurements = [m for m in self.measurements if m.get('alert_index') == alert_index]
+            alert_step = len(alert_measurements) + 1
+        else:
+            # For measurements without alert_index, use global counter
+            non_alert_measurements = [m for m in self.measurements if m.get('alert_index') is None]
+            alert_step = len(non_alert_measurements) + 1
+        
+        self.step_counter += 1  # Keep global counter for overall tracking
 
         # Convert ms to seconds
         load_time_s = load_time_ms / 1000
 
         measurement = {
-            "step": self.step_counter,
+            "step": alert_step,  # Per-alert step counter
+            "global_step": self.step_counter,  # Global step for reference
             "page": page,
             "action": action,
             "timestamp": datetime.now().isoformat(),
@@ -128,13 +143,23 @@ class PerformanceTracker:
         if ui_responsiveness:
             measurement["ui_responsiveness"] = asdict(ui_responsiveness)
 
+        # Add alert_index if provided
+        if alert_index is not None:
+            measurement["alert_index"] = alert_index
+
         # Add any additional data
         measurement.update(kwargs)
 
         self.measurements.append(measurement)
-        logger.info(
-            f"Step {self.step_counter}: {page} - {action} - {load_time_s:.3f}s"
-        )
+        # Log with both per-alert and global step numbers
+        if alert_index is not None:
+            logger.info(
+                f"Alert {alert_index} - Step {alert_step}: {page} - {action} - {load_time_s:.3f}s (global: {self.step_counter})"
+            )
+        else:
+            logger.info(
+                f"Setup - Step {alert_step}: {page} - {action} - {load_time_s:.3f}s (global: {self.step_counter})"
+            )
         
         # Log additional metrics if available
         if core_web_vitals and core_web_vitals.largest_contentful_paint_s:
@@ -187,12 +212,16 @@ class PerformanceTracker:
             "max_load_time_s": round(max(load_times), 3),
             "slowest_step": {
                 "step": slowest["step"],
+                "global_step": slowest.get("global_step", slowest["step"]),
+                "alert_index": slowest.get("alert_index"),
                 "page": slowest["page"],
                 "action": slowest["action"],
                 "load_time_s": slowest["load_time_s"]
             },
             "fastest_step": {
                 "step": fastest["step"],
+                "global_step": fastest.get("global_step", fastest["step"]),
+                "alert_index": fastest.get("alert_index"),
                 "page": fastest["page"],
                 "action": fastest["action"],
                 "load_time_s": fastest["load_time_s"]
@@ -213,6 +242,13 @@ class PerformanceTracker:
         end_time = datetime.now()
         duration = (end_time - self.start_time).total_seconds()
 
+        # Calculate summary statistics
+        summary = self.calculate_summary()
+        multi_alert_summary = self.calculate_multi_alert_summary()
+
+        # Group measurements by alert_index
+        grouped_measurements = self._group_measurements_by_alert()
+        
         # Build report structure
         report = {
             "test_metadata": {
@@ -226,9 +262,14 @@ class PerformanceTracker:
                     "latency_ms": self.network_config["latency"]
                 }
             },
-            "measurements": self.measurements,
-            "summary": self.calculate_summary()
+            "measurements_by_alert": grouped_measurements,
+            "all_measurements": self.measurements,  # Keep original flat structure for reference
+            "summary": summary
         }
+        
+        # Add multi-alert summary if we have multi-alert data
+        if multi_alert_summary and multi_alert_summary.get('alert_summaries'):
+            report.update(multi_alert_summary)
 
         # Create output directory if it doesn't exist
         output_path = Path(output_dir)
@@ -247,6 +288,163 @@ class PerformanceTracker:
 
         logger.info(f"Performance report generated: {filepath}")
         return str(filepath)
+
+    def calculate_multi_alert_summary(self) -> Dict[str, Any]:
+        """Calculate aggregated statistics across multiple alerts"""
+        if not self.measurements:
+            return {}
+
+        # Group measurements by alert_index
+        alerts_data = {}
+        measurements_without_alert = []
+        
+        for measurement in self.measurements:
+            alert_idx = measurement.get('alert_index')
+            if alert_idx is not None:
+                if alert_idx not in alerts_data:
+                    alerts_data[alert_idx] = []
+                alerts_data[alert_idx].append(measurement)
+            else:
+                measurements_without_alert.append(measurement)
+
+        # Calculate per-alert summaries
+        alert_summaries = {}
+        for alert_idx, alert_measurements in alerts_data.items():
+            alert_load_times = [m['load_time_s'] for m in alert_measurements]
+            page_breakdown = {}
+            
+            # Group by page type for this alert
+            for measurement in alert_measurements:
+                page = measurement['page']
+                if page not in page_breakdown:
+                    page_breakdown[page] = []
+                page_breakdown[page].append(measurement['load_time_s'])
+            
+            # Calculate averages per page type
+            page_averages = {}
+            for page, times in page_breakdown.items():
+                page_averages[f"{page}_avg_s"] = round(sum(times) / len(times), 3)
+                page_averages[f"{page}_count"] = len(times)
+            
+            alert_summaries[f"alert_{alert_idx}"] = {
+                "total_measurements": len(alert_measurements),
+                "total_time_s": round(sum(alert_load_times), 3),
+                "avg_time_s": round(sum(alert_load_times) / len(alert_load_times), 3) if alert_load_times else 0,
+                "min_time_s": round(min(alert_load_times), 3) if alert_load_times else 0,
+                "max_time_s": round(max(alert_load_times), 3) if alert_load_times else 0,
+                **page_averages
+            }
+
+        # Calculate overall multi-alert statistics
+        all_alert_avg_times = []
+        all_alert_total_times = []
+        for summary in alert_summaries.values():
+            all_alert_avg_times.append(summary['avg_time_s'])
+            all_alert_total_times.append(summary['total_time_s'])
+
+        # Calculate bucket-level aggregations
+        bucket_stats = self._calculate_bucket_statistics()
+
+        # Calculate proper multi-alert metrics
+        total_cumulative_time = sum(all_alert_total_times)
+        avg_step_time = sum(all_alert_avg_times) / len(all_alert_avg_times) if all_alert_avg_times else 0
+        avg_alert_duration = total_cumulative_time / len(alerts_data) if alerts_data else 0
+
+        multi_alert_summary = {
+            "alerts_tested": len(alerts_data),
+            "avg_step_time_s": round(avg_step_time, 3),
+            "avg_alert_duration_s": round(avg_alert_duration, 3),
+            "total_cumulative_time_s": round(total_cumulative_time, 3),
+            "fastest_alert": self._get_fastest_alert(alert_summaries),
+            "slowest_alert": self._get_slowest_alert(alert_summaries),
+            "bucket_averages": bucket_stats
+        }
+
+        return {
+            "alert_summaries": alert_summaries,
+            "multi_alert_summary": multi_alert_summary,
+            "measurements_without_alert": len(measurements_without_alert)
+        }
+
+    def _calculate_bucket_statistics(self) -> Dict[str, float]:
+        """Calculate average load times for different page buckets across all alerts"""
+        buckets = {
+            "alert_details_avg_s": [],
+            "feature_loading_avg_s": [],
+            "network_viz_avg_s": []
+        }
+        
+        for measurement in self.measurements:
+            load_time = measurement['load_time_s']
+            page = measurement['page']
+            
+            if page == 'alert_details':
+                buckets['alert_details_avg_s'].append(load_time)
+            elif page == 'feature':
+                buckets['feature_loading_avg_s'].append(load_time)
+            elif page == 'network_visualization':
+                buckets['network_viz_avg_s'].append(load_time)
+        
+        # Calculate averages
+        bucket_averages = {}
+        for bucket_name, times in buckets.items():
+            if times:
+                bucket_averages[bucket_name] = round(sum(times) / len(times), 3)
+                bucket_averages[bucket_name.replace('_avg_s', '_count')] = len(times)
+            else:
+                bucket_averages[bucket_name] = 0
+                bucket_averages[bucket_name.replace('_avg_s', '_count')] = 0
+                
+        return bucket_averages
+
+    def _get_fastest_alert(self, alert_summaries: Dict[str, Any]) -> Dict[str, Any]:
+        """Find the fastest alert by average time"""
+        if not alert_summaries:
+            return {}
+        
+        fastest = min(alert_summaries.items(), key=lambda x: x[1]['avg_time_s'])
+        return {
+            "alert_id": fastest[0],
+            "avg_time_s": fastest[1]['avg_time_s'],
+            "total_time_s": fastest[1]['total_time_s']
+        }
+
+    def _get_slowest_alert(self, alert_summaries: Dict[str, Any]) -> Dict[str, Any]:
+        """Find the slowest alert by average time"""
+        if not alert_summaries:
+            return {}
+        
+        slowest = max(alert_summaries.items(), key=lambda x: x[1]['avg_time_s'])
+        return {
+            "alert_id": slowest[0],
+            "avg_time_s": slowest[1]['avg_time_s'],
+            "total_time_s": slowest[1]['total_time_s']
+        }
+
+    def _group_measurements_by_alert(self) -> Dict[str, Any]:
+        """Group measurements by alert_index for cleaner report structure"""
+        grouped = {}
+        
+        # Group measurements by alert_index
+        for measurement in self.measurements:
+            alert_idx = measurement.get('alert_index')
+            
+            if alert_idx is not None:
+                alert_key = f"alert_{alert_idx}"
+                if alert_key not in grouped:
+                    grouped[alert_key] = []
+                grouped[alert_key].append(measurement)
+            else:
+                # Measurements without alert_index (like initial alert_list load)
+                if "setup" not in grouped:
+                    grouped["setup"] = []
+                grouped["setup"].append(measurement)
+        
+        # Sort measurements within each alert by step
+        for alert_key in grouped:
+            grouped[alert_key].sort(key=lambda x: x['step'])
+        
+        return grouped
 
     def get_measurements(self) -> List[Dict[str, Any]]:
         """Get all measurements"""
@@ -364,6 +562,54 @@ class PerformanceTracker:
             logger.warning(f"Failed to collect Core Web Vitals: {e}")
             return CoreWebVitals()
     
+    def start_memory_monitoring(self, interval_seconds: float = 1.0) -> None:
+        """Start continuous memory monitoring in background thread"""
+        if self._memory_monitoring:
+            return
+            
+        self._memory_monitoring = True
+        self._memory_samples = []
+        
+        def monitor_memory():
+            while self._memory_monitoring:
+                try:
+                    # Get system memory
+                    process = psutil.Process()
+                    memory_info = process.memory_info()
+                    memory_percent = process.memory_percent()
+                    
+                    sample = {
+                        "timestamp": datetime.now().isoformat(),
+                        "system_memory_mb": round(memory_info.rss / 1024 / 1024, 2),
+                        "system_memory_percent": round(memory_percent, 2)
+                    }
+                    
+                    self._memory_samples.append(sample)
+                    
+                except Exception as e:
+                    logger.warning(f"Memory monitoring error: {e}")
+                    
+                time.sleep(interval_seconds)
+        
+        self._memory_thread = threading.Thread(target=monitor_memory, daemon=True)
+        self._memory_thread.start()
+        logger.debug("Memory monitoring started")
+    
+    def stop_memory_monitoring(self) -> List[Dict[str, Any]]:
+        """Stop memory monitoring and return collected samples"""
+        if not self._memory_monitoring:
+            return []
+            
+        self._memory_monitoring = False
+        
+        # Wait for thread to finish
+        if self._memory_thread and self._memory_thread.is_alive():
+            self._memory_thread.join(timeout=2.0)
+        
+        samples = self._memory_samples.copy()
+        logger.info(f"Memory monitoring stopped. Collected {len(samples)} samples")
+        return samples
+
     def collect_memory_metrics(self, page) -> MemoryMetrics:
         """Collect memory usage metrics from browser and system"""
         js_metrics = {}

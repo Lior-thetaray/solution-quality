@@ -244,26 +244,82 @@ class AlertListPage(BasePage):
             index: Zero-based index of the alert to click
             timeout: Maximum time to wait in milliseconds
 
-        Returns:
+        Returns:  
             Tuple of (load_time_ms, metrics_dict)
         """
+        # First check how many alerts are available
         alerts = self.get_elements(self.alert_title_selector)
         alert_count = alerts.count()
+        logger.debug(f"Found {alert_count} alerts on the page")
 
         if index >= alert_count:
             raise IndexError(f"Alert index {index} out of range (total alerts: {alert_count})")
 
         logger.debug(f"Clicking alert at index {index}")
 
-        # Get specific alert element
-        alert_selector = f"{self.alert_title_selector}:nth-of-type({index + 1})"
+        # Get current URL before click
+        url_before = self.page.url
+        logger.debug(f"URL before click: {url_before}")
 
-        # Click and measure
+        # Click the specific alert using Playwright's nth() method
+        import time
+        start_time = time.time()
+        
+        alerts.nth(index).click()
+        logger.debug(f"Alert at index {index} clicked")
+
+        # Wait for URL to change (SPA navigation)
+        try:
+            self.page.wait_for_url(lambda url: url != url_before, timeout=timeout)
+            logger.debug(f"URL changed to: {self.page.url}")
+        except Exception as e:
+            logger.warning(f"URL did not change after click: {e}")
+
+        # Wait 300ms for dynamic content to start loading
+        time.sleep(0.3)
+
+        # Wait for network to become idle (data loaded)
+        try:
+            self.page.wait_for_load_state("networkidle", timeout=15000)
+            logger.debug("Network idle after clicking alert")
+        except Exception as e:
+            logger.warning(f"Network idle timeout: {e}")
+
+        # END TIMER
+        end_time = time.time()
+        load_time_ms = (end_time - start_time) * 1000
+
+        logger.info(f"Alert details page load time: {load_time_ms}ms")
+        return load_time_ms, {}
+
+    def navigate_back_to_alert_list(self, timeout: int = 30000) -> tuple[float, Dict[str, Any]]:
+        """
+        Navigate back to alert list using the 'All alerts' link and measure performance.
+
+        Args:
+            timeout: Maximum time to wait in milliseconds
+
+        Returns:
+            Tuple of (load_time_ms, metrics_dict)
+        """
+        logger.debug("Navigating back to alert list")
+
+        # Look for the 'All alerts' link using data-cy attributes
+        all_alerts_selector = '[data-cy="alerts-view-item"][data-cy-view="All alerts"]'
+
+        # Wait for the element to be available
+        self.wait_for_element_with_retry(
+            all_alerts_selector,
+            timeout_ms=5000,
+            screenshot_name="all_alerts_link_not_found"
+        )
+
+        # Click and measure navigation performance
         load_time_ms, metrics = self.click_and_measure(
-            selector=alert_selector,
-            wait_selector=".alert-details, .main-content",
+            selector=all_alerts_selector,
+            wait_selector=self.alert_title_selector,  # Wait for alert list to load
             timeout=timeout
         )
 
-        logger.info(f"Alert details page load time: {load_time_ms}ms")
+        logger.info(f"Navigation back to alert list completed in {load_time_ms}ms")
         return load_time_ms, metrics
