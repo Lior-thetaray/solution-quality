@@ -28,6 +28,11 @@ class ExcelReaderTool(BaseTool):
     def _run(self, excel_path: str, sheet_name: Optional[str] = None) -> str:
         """Read Excel file and return feature data"""
         try:
+            # Convert relative path to absolute path from workspace root
+            if not os.path.isabs(excel_path):
+                workspace_root = Path(__file__).parent.parent.parent  # CrewAi/tools -> CrewAi -> workspace root
+                excel_path = str(workspace_root / excel_path)
+            
             if not os.path.exists(excel_path):
                 return f"Error: Excel file not found at {excel_path}"
             
@@ -98,8 +103,9 @@ class FeatureImplementationValidatorTool(BaseTool):
     def _run(self, feature_name: str, domain: str, expected_description: str) -> str:
         """Validate feature implementation"""
         try:
-            # Construct feature file path
-            base_path = Path(f"Sonar/domains/{domain}/features/core/customer")
+            # Construct feature file path from workspace root
+            workspace_root = Path(__file__).parent.parent.parent  # CrewAi/tools -> CrewAi -> workspace root
+            base_path = workspace_root / "Sonar" / "domains" / domain / "features" / "core" / "customer"
             feature_file = base_path / f"{feature_name}.py"
             
             if not feature_file.exists():
@@ -185,7 +191,8 @@ class WranglingConfigValidatorTool(BaseTool):
         try:
             import yaml
             
-            config_path = Path(f"Sonar/domains/{domain}/config/core/{entity}/{cadence}/wrangling.yaml")
+            workspace_root = Path(__file__).parent.parent.parent  # CrewAi/tools -> CrewAi -> workspace root
+            config_path = workspace_root / "Sonar" / "domains" / domain / "config" / "core" / entity / cadence / "wrangling.yaml"
             
             if not config_path.exists():
                 return f"❌ Config file not found: {config_path}"
@@ -254,7 +261,8 @@ class TrainingNotebookValidatorTool(BaseTool):
     def _run(self, domain: str, notebook_name: str = "train_model") -> str:
         """Validate training notebook"""
         try:
-            notebook_path = Path(f"Sonar/domains/{domain}/notebooks/{notebook_name}.ipynb")
+            workspace_root = Path(__file__).parent.parent.parent  # CrewAi/tools -> CrewAi -> workspace root
+            notebook_path = workspace_root / "Sonar" / "domains" / domain / "notebooks" / f"{notebook_name}.ipynb"
             
             if not notebook_path.exists():
                 return f"❌ Training notebook not found: {notebook_path}"
@@ -316,6 +324,11 @@ class RiskAssessmentAlignmentReportTool(BaseTool):
     def _run(self, domain: str, excel_path: str) -> str:
         """Generate comprehensive alignment report"""
         try:
+            # Convert relative path to absolute path from workspace root
+            if not os.path.isabs(excel_path):
+                workspace_root = Path(__file__).parent.parent.parent  # CrewAi/tools -> CrewAi -> workspace root
+                excel_path = str(workspace_root / excel_path)
+            
             results = []
             results.append("=" * 80)
             results.append("RISK ASSESSMENT ALIGNMENT REPORT")
@@ -361,9 +374,11 @@ class RiskAssessmentAlignmentReportTool(BaseTool):
             missing_features = []
             implemented_features = []
             
+            workspace_root = Path(__file__).parent.parent.parent
+            
             for feature in features_from_ra:
                 feature_name = feature['name']
-                feature_path = Path(f"Sonar/domains/{domain}/features/core/customer/{feature_name}.py")
+                feature_path = workspace_root / "Sonar" / "domains" / domain / "features" / "core" / "customer" / f"{feature_name}.py"
                 
                 if feature_path.exists():
                     implemented_features.append(feature_name)
@@ -386,7 +401,7 @@ class RiskAssessmentAlignmentReportTool(BaseTool):
             results.append("")
             
             import yaml
-            config_path = Path(f"Sonar/domains/{domain}/config/core/customer/monthly/wrangling.yaml")
+            config_path = workspace_root / "Sonar" / "domains" / domain / "config" / "core" / "customer" / "monthly" / "wrangling.yaml"
             
             if config_path.exists():
                 with open(config_path, 'r') as f:

@@ -4,7 +4,9 @@ Generalized runner that detects missing reports and only runs what's needed.
 
 Supported agents:
 - sdlc: Code quality and solution structure validation
-- alert_validation: Alert quality and data validation  
+- alert_validation: Alert quality and data validation
+- widget_validation: Widget configuration validation
+- feature_quality: UI + Risk assessment alignment validation
 - manager_consolidated: Manager consolidation of all reports
 
 Usage:
@@ -29,7 +31,7 @@ from main_unified import (
 
 
 # All possible agent types
-ALL_AGENTS = ['sdlc', 'alert_validation']
+ALL_AGENTS = ['sdlc', 'alert_validation', 'widget_validation', 'feature_quality', 'performance']
 MANAGER_AGENT = 'manager_consolidated'
 
 
@@ -121,10 +123,14 @@ def main():
     for arg in sys.argv[1:]:
         if arg.startswith('--'):
             continue
-        elif arg in ['sdlc', 'alert', 'alert_validation', 'manager']:
-            # Map 'alert' to 'alert_validation', 'manager' to run manager
+        elif arg in ['sdlc', 'alert', 'alert_validation', 'widget', 'widget_validation', 'feature_quality', 'ui', 'manager']:
+            # Map shortcuts to full names
             if arg == 'alert':
                 force_agents.append('alert_validation')
+            elif arg == 'widget':
+                force_agents.append('widget_validation')
+            elif arg == 'ui':
+                force_agents.append('feature_quality')
             elif arg == 'manager':
                 force_agents.append(MANAGER_AGENT)
             else:

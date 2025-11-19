@@ -27,6 +27,15 @@ from tools.risk_assessment_tools import (
     TrainingNotebookValidatorTool,
     RiskAssessmentAlignmentReportTool
 )
+from tools.widget_validation_tools import (
+    AnalyzeFeatureWidgetsTool,
+    GetWidgetBestPracticesTool,
+    CheckFeatureWidgetRequirementsTool
+)
+from tools.performance_tools import (
+    ReadPerformanceReportTool,
+    CalculatePerformanceScoreTool
+)
 
 
 class ToolRegistry:
@@ -70,6 +79,15 @@ class ToolRegistry:
         self._tools['wrangling_config_validator'] = WranglingConfigValidatorTool()
         self._tools['training_notebook_validator'] = TrainingNotebookValidatorTool()
         self._tools['risk_assessment_alignment_report'] = RiskAssessmentAlignmentReportTool()
+        
+        # Widget validation tools
+        self._tools['analyze_feature_widgets'] = AnalyzeFeatureWidgetsTool()
+        self._tools['widget_best_practices'] = GetWidgetBestPracticesTool()
+        self._tools['check_widget_requirements'] = CheckFeatureWidgetRequirementsTool()
+        
+        # Performance tools
+        self._tools['read_performance_report'] = ReadPerformanceReportTool()
+        self._tools['calculate_performance_score'] = CalculatePerformanceScoreTool()
     
     def get_tools_for_agent(self, agent_type: str) -> List[Any]:
         """Get tool instances for a specific agent type"""
@@ -105,6 +123,32 @@ class ToolRegistry:
                 self._tools['risk_assessment_alignment_report'],
                 self._tools['python_feature_analyzer'],  # Reuse for feature analysis
                 self._tools['yaml_config_analyzer'],  # Reuse for config analysis
+            ]
+        elif agent_type == "widget_validation":
+            return [
+                self._tools['analyze_feature_widgets'],
+                self._tools['widget_best_practices'],
+                self._tools['check_widget_requirements'],
+            ]
+        elif agent_type == "feature_quality":
+            # Combined UI validation + Risk assessment
+            return [
+                # UI validation tools
+                self._tools['ui_feature_metadata'],
+                # Risk assessment tools
+                self._tools['excel_reader'],
+                self._tools['feature_implementation_validator'],
+                self._tools['wrangling_config_validator'],
+                self._tools['training_notebook_validator'],
+                self._tools['risk_assessment_alignment_report'],
+                # Shared tools
+                self._tools['python_feature_analyzer'],
+                self._tools['yaml_config_analyzer'],
+            ]
+        elif agent_type == "performance":
+            return [
+                self._tools['read_performance_report'],
+                self._tools['calculate_performance_score'],
             ]
         elif agent_type == "orchestrator":
             # Orchestrator might need access to all tools or subset

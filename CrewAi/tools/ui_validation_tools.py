@@ -3,18 +3,14 @@
 from crewai.tools import BaseTool
 from typing import Type, Optional, List, Dict, Any
 from pydantic import BaseModel, Field
-import sys
+import ast
 import json
-import importlib
+import re
 from pathlib import Path
 
 # Get workspace root
 WORKSPACE_ROOT = Path(__file__).parent.parent.parent.absolute()
 SONAR_PATH = WORKSPACE_ROOT / "Sonar"
-
-# Add Sonar to Python path for imports
-if str(SONAR_PATH) not in sys.path:
-    sys.path.insert(0, str(SONAR_PATH))
 
 
 class UIFeatureInput(BaseModel):
@@ -25,56 +21,139 @@ class UIFeatureInput(BaseModel):
 class UIFeatureMetadataExtractorTool(BaseTool):
     name: str = "UI Feature Metadata Extractor"
     description: str = (
-        "Extracts UI display metadata from feature instances by actually importing and "
-        "instantiating them. Returns feature identifiers, display names, descriptions, "
-        "categories, and Field definitions with dynamic_description templates. "
-        "This tool EXECUTES Python code to get runtime metadata."
+        "Extracts UI display metadata from feature files using AST parsing. "
+        "Returns feature identifiers, Field definitions with display_name, category, "
+        "description, and dynamic_description templates. Does NOT execute code."
     )
     args_schema: Type[BaseModel] = UIFeatureInput
     
-    def _import_feature_class(self, domain: str, module_path: str, class_name: str) -> Optional[Any]:
-        """Dynamically import a feature class."""
-        try:
-            # Convert file path to module path
-            # e.g., "features/core/customer/one_to_many.py" -> "domains.demo_fuib.features.core.customer.one_to_many"
-            rel_path = module_path.replace('features/', '').replace('.py', '').replace('/', '.')
-            full_module = f"domains.{domain}.features.{rel_path}"
-            
-            module = importlib.import_module(full_module)
-            return getattr(module, class_name, None)
-        except Exception as e:
-            return None
+    def _extract_string_value(self, node: ast.AST) -> Optional[str]:
+        """Extract string value from AST node."""
+        if isinstance(node, ast.Constant):
+            return str(node.value) if node.value is not None else None
+        elif isinstance(node, ast.Str):  # Python 3.7 compatibility
+            return node.s
+        elif isinstance(node, ast.JoinedStr):  # f-string
+            # Try to reconstruct f-string
+            parts = []
+            for val in node.values:
+                if isinstance(val, (ast.Constant, ast.Str)):
+                    parts.append(self._extract_string_value(val) or "")
+                elif isinstance(val, ast.FormattedValue):
+                    parts.append("{...}")
+            return "".join(parts)
+        return None
     
-    def _extract_field_metadata(self, field_obj: Any) -> Dict[str, Any]:
-        """Extract metadata from a Field object."""
-        metadata = {}
+    def _extract_field_call(self, node: ast.Call) -> Optional[Dict[str, Any]]:
+        """Extract Field() call parameters."""
+        field_data = {}
         
-        # Get all attributes
-        for attr in ['name', 'display_name', 'description', 'dynamic_description', 
-                     'category', 'datatype', 'business_type']:
-            if hasattr(field_obj, attr):
-                val = getattr(field_obj, attr)
-                if val is not None:
-                    metadata[attr] = str(val) if not isinstance(val, (str, int, float, bool)) else val
+        # Get positional args (name is usually first)
+        if node.args:
+            name_val = self._extract_string_value(node.args[0])
+            if name_val:
+                field_data['name'] = name_val
         
-        return metadata
+        # Get keyword arguments
+        for keyword in node.keywords:
+            key = keyword.arg
+            if key in ['display_name', 'description', 'dynamic_description', 'category', 
+                      'datatype', 'business_type']:
+                val = self._extract_string_value(keyword.value)
+                if val:
+                    field_data[key] = val
+        
+        return field_data if field_data else None
+    
+    def _extract_method_return_value(self, method_node: ast.FunctionDef, method_name: str) -> Optional[Any]:
+        """Extract return value from a simple method."""
+        for node in ast.walk(method_node):
+            if isinstance(node, ast.Return) and node.value:
+                if isinstance(node.value, (ast.Constant, ast.Str)):
+                    return self._extract_string_value(node.value)
+        return None
+    
+    def _parse_feature_file(self, file_path: Path) -> Dict[str, Any]:
+        """Parse a single feature file using AST."""
+        result = {
+            "file": str(file_path.relative_to(SONAR_PATH / "domains")),
+            "class_name": None,
+            "identifier": None,
+            "version": None,
+            "description": None,
+            "output_fields": [],
+            "has_trace_query": False,
+            "type": "unknown"
+        }
+        
+        try:
+            with open(file_path, 'r') as f:
+                tree = ast.parse(f.read())
+            
+            # Find class definitions
+            for node in ast.walk(tree):
+                if isinstance(node, ast.ClassDef):
+                    result['class_name'] = node.name
+                    
+                    # Look for methods
+                    for item in node.body:
+                        if isinstance(item, ast.FunctionDef):
+                            method_name = item.name
+                            
+                            # Check for trace_query method
+                            if method_name == 'trace_query':
+                                result['has_trace_query'] = True
+                            
+                            # Extract simple return values
+                            elif method_name == 'identifier':
+                                val = self._extract_method_return_value(item, 'identifier')
+                                if val:
+                                    result['identifier'] = val
+                            
+                            elif method_name == 'version':
+                                val = self._extract_method_return_value(item, 'version')
+                                if val:
+                                    result['version'] = val
+                            
+                            elif method_name == 'description':
+                                val = self._extract_method_return_value(item, 'description')
+                                if val:
+                                    result['description'] = val
+                            
+                            # Parse output_fields method
+                            elif method_name == 'output_fields':
+                                for stmt in ast.walk(item):
+                                    # Look for Field() calls
+                                    if isinstance(stmt, ast.Call):
+                                        if isinstance(stmt.func, ast.Name) and stmt.func.id == 'Field':
+                                            field_data = self._extract_field_call(stmt)
+                                            if field_data:
+                                                result['output_fields'].append(field_data)
+            
+            # Determine feature type from identifier
+            identifier = result['identifier'] or result['class_name'] or ""
+            identifier_lower = identifier.lower()
+            
+            if 'z_score' in identifier_lower or 'zscore' in identifier_lower:
+                result['type'] = 'z_score'
+            elif identifier_lower.startswith('cnt_') or identifier_lower.startswith('count_'):
+                result['type'] = 'count'
+            elif identifier_lower.startswith('sum_') or identifier_lower.startswith('total_'):
+                result['type'] = 'sum'
+            elif identifier_lower.startswith('max_') or identifier_lower.startswith('min_'):
+                result['type'] = 'minmax'
+            
+        except Exception as e:
+            result['parse_error'] = str(e)
+        
+        return result
     
     def _run(self, domain: str) -> str:
         """Execute the UI metadata extraction."""
-        # First, use Python Feature Analyzer to get feature files
-        from tools.code_analysis_tools import PythonFeatureAnalyzerTool, YAMLConfigAnalyzerTool
-        
-        feature_analyzer = PythonFeatureAnalyzerTool()
-        yaml_analyzer = YAMLConfigAnalyzerTool()
-        
-        # Get feature file structure
-        features_result = feature_analyzer._run(domain)
-        features_data = json.loads(features_result)
-        
-        if 'error' in features_data:
-            return json.dumps({"error": features_data['error']})
-        
         # Get YAML config to identify training features
+        from tools.code_analysis_tools import YAMLConfigAnalyzerTool
+        
+        yaml_analyzer = YAMLConfigAnalyzerTool()
         yaml_result = yaml_analyzer._run(domain)
         yaml_data = json.loads(yaml_result)
         
@@ -85,111 +164,39 @@ class UIFeatureMetadataExtractorTool(BaseTool):
                 if feat.get('train'):
                     training_features.add(feat['identifier'])
         
-        # Now instantiate features and extract UI metadata
+        # Find all feature files
+        features_path = SONAR_PATH / "domains" / domain / "features"
+        
+        if not features_path.exists():
+            return json.dumps({"error": f"Features path not found: {features_path}"})
+        
         ui_features = []
         errors = []
         
-        for feature_info in features_data['features']:
+        # Parse each feature file
+        for py_file in features_path.rglob("*.py"):
+            if py_file.name.startswith("__"):
+                continue
+            
             try:
-                # Import the class
-                feature_class = self._import_feature_class(
-                    domain, 
-                    feature_info['file'], 
-                    feature_info['class_name']
-                )
+                feature_data = self._parse_feature_file(py_file)
                 
-                if not feature_class:
+                # Add training flag
+                identifier = feature_data['identifier'] or feature_data['class_name']
+                feature_data['is_training_feature'] = identifier in training_features if identifier else False
+                
+                if 'parse_error' in feature_data:
                     errors.append({
-                        "file": feature_info['file'],
-                        "error": "Could not import feature class"
+                        "file": feature_data['file'],
+                        "error": feature_data['parse_error']
                     })
-                    continue
                 
-                # Instantiate the feature
-                try:
-                    feature_instance = feature_class()
-                except Exception as e:
-                    # Some features need parameters, try with empty dict
-                    try:
-                        feature_instance = feature_class({})
-                    except:
-                        errors.append({
-                            "file": feature_info['file'],
-                            "class": feature_info['class_name'],
-                            "error": f"Could not instantiate: {str(e)}"
-                        })
-                        continue
-                
-                # Extract metadata
-                ui_metadata = {
-                    "file": feature_info['file'],
-                    "class_name": feature_info['class_name'],
-                    "identifier": None,
-                    "version": None,
-                    "description": None,
-                    "output_fields": [],
-                    "has_trace_query": feature_info.get('has_trace_query', False),
-                    "is_training_feature": False,
-                    "type": "unknown"
-                }
-                
-                # Get identifier
-                if hasattr(feature_instance, 'identifier'):
-                    try:
-                        ui_metadata['identifier'] = feature_instance.identifier()
-                    except:
-                        pass
-                
-                # Get version
-                if hasattr(feature_instance, 'version'):
-                    try:
-                        ui_metadata['version'] = feature_instance.version()
-                    except:
-                        pass
-                
-                # Get description
-                if hasattr(feature_instance, 'description'):
-                    try:
-                        ui_metadata['description'] = feature_instance.description()
-                    except:
-                        pass
-                
-                # Get output fields (THIS IS KEY FOR UI VALIDATION)
-                if hasattr(feature_instance, 'output_fields'):
-                    try:
-                        fields = feature_instance.output_fields()
-                        if fields:
-                            for field in fields:
-                                field_meta = self._extract_field_metadata(field)
-                                ui_metadata['output_fields'].append(field_meta)
-                    except Exception as e:
-                        errors.append({
-                            "file": feature_info['file'],
-                            "class": feature_info['class_name'],
-                            "error": f"Could not extract output_fields: {str(e)}"
-                        })
-                
-                # Determine feature type
-                identifier = ui_metadata['identifier'] or ui_metadata['class_name']
-                if identifier:
-                    if identifier.lower().startswith('z_score') or 'zscore' in identifier.lower():
-                        ui_metadata['type'] = 'z_score'
-                    elif identifier.lower().startswith('cnt_') or identifier.lower().startswith('count_'):
-                        ui_metadata['type'] = 'count'
-                    elif identifier.lower().startswith('sum_') or identifier.lower().startswith('total_'):
-                        ui_metadata['type'] = 'sum'
-                    elif identifier.lower().startswith('max_') or identifier.lower().startswith('min_'):
-                        ui_metadata['type'] = 'minmax'
-                    
-                    # Check if training feature
-                    ui_metadata['is_training_feature'] = identifier in training_features
-                
-                ui_features.append(ui_metadata)
+                ui_features.append(feature_data)
                 
             except Exception as e:
                 errors.append({
-                    "file": feature_info['file'],
-                    "error": f"Unexpected error: {str(e)}"
+                    "file": str(py_file.relative_to(SONAR_PATH / "domains")),
+                    "error": str(e)
                 })
         
         result = {
