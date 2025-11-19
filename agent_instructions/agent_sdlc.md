@@ -70,18 +70,19 @@ To ensure the agent fully validates a complete ThetaRay solution, the following 
 ### A) EvaluationFlow Requirements 
 Every solution's EvaluationFlow must include:
 - **EvaluationFlow metadata object** describing model, datasets, and trace queries.
-- **TraceQueries** for each trained feature, with required fields:
+- **global_trace_query** - A TraceQuery that applies to ALL features (base transaction filter). Check if `global_trace_query=TraceQuery(...)` exists in the EvaluationFlow definition.
+- **trace_queries** - List of feature-specific TraceQueries returned by a function (e.g., `_trace_queries()`). Each should have:
   - `identifier`
-  - `features`
+  - `features` (list of feature identifiers this query applies to)
   - `dataset`
   - `sql`
-  - `parquet_index` (when applicable)
-  - **`year_month` field** in the trace query dataset, formatted as `YYYY_MM` (e.g., "2024_03")
 
 The QA agent must:
-- Validate structure, syntax, and presence of each required field.
-- Ensure each feature in the evaluation notebook is mapped to a corresponding trace query.
-- **Verify that the trace query dataset includes a `year_month` field in `YYYY_MM` format** (validate by checking dataset schema or SQL query SELECT clause).
+- **PASS if global_trace_query is defined** in the EvaluationFlow - this means base query exists.
+- Validate that features listed in wrangling configs (with `train: true`) either:
+  a) Have individual trace_query methods in their feature files, OR
+  b) Are covered by the global_trace_query
+- Only FAIL if trained features have NO trace coverage (neither individual nor global).
 
 ### B) Airflow DAG Structure Requirements
 A full solution must include operational DAGs with:
@@ -91,15 +92,19 @@ The QA agent must:
 - Existance of a full E2E DAG is configures: data upload to distribution
 
 ### C) Decisioning & Risks 
-The risk files must define:
-- Risk objects with conditions, parameters, variables, enrichment fields.
-- Dynamic templates (where applicable).
-- Proper metadata references to dataset fields.
+The risk YAML files must define:
+- Risk objects with `identifier`, `display_name`, `description`, `severity`
+- `evaluation_flows` list referencing valid EvaluationFlow identifiers
+- `conditions` array with variable references
+- `variables` array defining boolean expressions
+- Dynamic templates (e.g., `dynamic_display_name`, `dynamic_description`) are optional
+- Metadata references should use correct syntax: `activity.<field>`, `algo[n].<field>`, `{parameters.<name>}`
 
 The QA agent must:
-- Validate correct metadata references.
-- Confirm no unresolved or invalid dynamic attributes.
-- Verify all referenced fields exist in dataset metadata.
+- Validate that `evaluation_flows` references match existing EvaluationFlow identifiers
+- Confirm variables are properly defined before being referenced in conditions
+- Check that basic required fields exist (identifier, severity, conditions, variables)
+- **NOTE**: Metadata field validation (checking if `activity.algo_score` exists in dataset) is NOT required - assume risk file syntax is correct if it follows the YAML structure above.
 
 ### D) Distribution Flow
 Solution must support:

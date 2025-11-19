@@ -9,6 +9,10 @@ import yaml
 import json
 from pathlib import Path
 
+# Get workspace root (parent of CrewAi directory)
+WORKSPACE_ROOT = Path(__file__).parent.parent.parent.absolute()
+SONAR_PATH = WORKSPACE_ROOT / "Sonar"
+
 
 class FileAnalysisInput(BaseModel):
     """Input schema for file analysis tools."""
@@ -54,16 +58,16 @@ class PythonFeatureAnalyzerTool(BaseTool):
     def _validate_import(self, import_module: str) -> bool:
         """Check if an imported module file exists."""
         # Convert module path to file path
-        # e.g., "common.libs.config.loader" -> "../Sonar/domains/common/libs/config/loader.py"
+        # e.g., "common.libs.config.loader" -> "WORKSPACE_ROOT/Sonar/domains/common/libs/config/loader.py"
         parts = import_module.split(".")
         if parts[0] in ["common", "default"] or parts[0].startswith("demo_") or parts[0].startswith("party_"):
-            file_path = Path(f"../Sonar/domains/{'/'.join(parts)}.py")
+            file_path = SONAR_PATH / "domains" / Path(*parts).with_suffix(".py")
             return file_path.exists()
         return True  # Assume external/thetaray imports are valid
     
     def _run(self, domain: str, file_pattern: Optional[str] = None) -> str:
         """Execute the feature analysis."""
-        features_path = Path(f"../Sonar/domains/{domain}/features")
+        features_path = SONAR_PATH / "domains" / domain / "features"
         
         if not features_path.exists():
             return json.dumps({"error": f"Features path not found: {features_path}"})
@@ -165,8 +169,8 @@ class YAMLConfigAnalyzerTool(BaseTool):
     args_schema: Type[BaseModel] = FileAnalysisInput
     
     def _run(self, domain: str, file_pattern: Optional[str] = None) -> str:
-        """Execute the YAML config analysis."""
-        config_path = Path(f"../Sonar/domains/{domain}/config/core")
+        """Execute the config analysis."""
+        config_path = SONAR_PATH / "domains" / domain / "config" / "core"
         
         if not config_path.exists():
             return json.dumps({"error": f"Config path not found: {config_path}"})
@@ -228,7 +232,7 @@ class DatasetAnalyzerTool(BaseTool):
     
     def _run(self, domain: str, file_pattern: Optional[str] = None) -> str:
         """Execute the dataset analysis."""
-        datasets_path = Path(f"../Sonar/domains/{domain}/datasets")
+        datasets_path = SONAR_PATH / "domains" / domain / "datasets"
         
         if not datasets_path.exists():
             return json.dumps({"error": f"Datasets path not found: {datasets_path}"})
@@ -288,8 +292,8 @@ class DAGAnalyzerTool(BaseTool):
     def _run(self, domain: str, file_pattern: Optional[str] = None) -> str:
         """Execute the DAG analysis."""
         dag_paths = [
-            Path(f"../Sonar/dags/{domain}"),
-            Path("../Sonar/dags/default")
+            SONAR_PATH / "dags" / domain,
+            SONAR_PATH / "dags" / "default"
         ]
         
         dags_info = []
@@ -342,7 +346,7 @@ class NotebookAnalyzerTool(BaseTool):
     
     def _run(self, domain: str, file_pattern: Optional[str] = None) -> str:
         """Execute the notebook analysis."""
-        notebooks_path = Path(f"../Sonar/domains/{domain}/notebooks")
+        notebooks_path = SONAR_PATH / "domains" / domain / "notebooks"
         
         if not notebooks_path.exists():
             return json.dumps({"error": f"Notebooks path not found: {notebooks_path}"})

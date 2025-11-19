@@ -79,13 +79,18 @@ class CSVDatasetReaderTool(BaseTool):
             })
 
 
+class CSVListInput(BaseModel):
+    """Input schema for CSV list tool (no arguments needed)."""
+    pass
+
+
 class CSVListTool(BaseTool):
     name: str = "CSV File Lister"
     description: str = (
         "Lists all available CSV files in the data directory. "
         "Use this to see what datasets are available for analysis."
     )
-    args_schema: Type[BaseModel] = BaseModel
+    args_schema: Type[BaseModel] = CSVListInput
     
     def _run(self) -> str:
         """List all CSV files in data directory."""

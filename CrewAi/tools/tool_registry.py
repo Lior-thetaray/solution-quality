@@ -12,7 +12,21 @@ from tools.code_analysis_tools import (
     NotebookAnalyzerTool
 )
 from tools.csv_tools import CSVDatasetReaderTool, CSVListTool
-from tools.alert_analysis_tools import JoinDatasetsTool, AggregateDatasetTool, CrossTableAnalysisTool
+from tools.alert_analysis_tools import (
+    JoinDatasetsTool, 
+    AggregateDatasetTool, 
+    CrossTableAnalysisTool,
+    MonthlyAlertPercentageTool,
+    ConsolidationEffectivenessTool
+)
+from tools.ui_validation_tools import UIFeatureMetadataExtractorTool
+from tools.risk_assessment_tools import (
+    ExcelReaderTool,
+    FeatureImplementationValidatorTool,
+    WranglingConfigValidatorTool,
+    TrainingNotebookValidatorTool,
+    RiskAssessmentAlignmentReportTool
+)
 
 
 class ToolRegistry:
@@ -44,6 +58,18 @@ class ToolRegistry:
         self._tools['join_datasets'] = JoinDatasetsTool()
         self._tools['aggregate_dataset'] = AggregateDatasetTool()
         self._tools['cross_table_analysis'] = CrossTableAnalysisTool()
+        self._tools['monthly_alert_percentage'] = MonthlyAlertPercentageTool()
+        self._tools['consolidation_effectiveness'] = ConsolidationEffectivenessTool()
+        
+        # UI validation tools
+        self._tools['ui_feature_metadata'] = UIFeatureMetadataExtractorTool()
+        
+        # Risk assessment tools
+        self._tools['excel_reader'] = ExcelReaderTool()
+        self._tools['feature_implementation_validator'] = FeatureImplementationValidatorTool()
+        self._tools['wrangling_config_validator'] = WranglingConfigValidatorTool()
+        self._tools['training_notebook_validator'] = TrainingNotebookValidatorTool()
+        self._tools['risk_assessment_alignment_report'] = RiskAssessmentAlignmentReportTool()
     
     def get_tools_for_agent(self, agent_type: str) -> List[Any]:
         """Get tool instances for a specific agent type"""
@@ -62,6 +88,23 @@ class ToolRegistry:
                 self._tools['join_datasets'],
                 self._tools['aggregate_dataset'],
                 self._tools['cross_table_analysis'],
+                self._tools['monthly_alert_percentage'],
+                self._tools['consolidation_effectiveness'],
+            ]
+        elif agent_type == "ui_validation":
+            return [
+                self._tools['ui_feature_metadata'],
+                self._tools['yaml_config_analyzer'],
+            ]
+        elif agent_type == "risk_assessment":
+            return [
+                self._tools['excel_reader'],
+                self._tools['feature_implementation_validator'],
+                self._tools['wrangling_config_validator'],
+                self._tools['training_notebook_validator'],
+                self._tools['risk_assessment_alignment_report'],
+                self._tools['python_feature_analyzer'],  # Reuse for feature analysis
+                self._tools['yaml_config_analyzer'],  # Reuse for config analysis
             ]
         elif agent_type == "orchestrator":
             # Orchestrator might need access to all tools or subset
