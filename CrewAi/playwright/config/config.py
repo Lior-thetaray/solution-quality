@@ -27,8 +27,8 @@ VIEWPORT = {
     "height": 1080
 }
 
-BROWSER_TYPE = "firefox" 
-HEADLESS = False  # Set to False to see browser window
+BROWSER_TYPE = "chrome" 
+HEADLESS = True  # Set to False to see browser window
 
 # Performance Monitoring Configuration
 PERFORMANCE_CONFIG = {
